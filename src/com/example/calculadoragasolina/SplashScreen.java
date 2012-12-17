@@ -17,23 +17,27 @@
 
 package com.example.calculadoragasolina;
 
-import android.os.Bundle;
+
 import android.app.Activity;
-import android.view.Menu;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
 
-public class Calculadora extends Activity {
-
+public class SplashScreen extends Activity {
+/** Called when the activity is first created. */
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_calculadora);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_calculadora, menu);
-		return true;
-	}
-
+		/*display the splash screen image*/
+		setContentView(R.layout.splash);
+		/*start up the splash screen and main menu in a time delayed thread*/
+		new Handler().postDelayed(new Thread() {
+			@Override
+			public void run() {
+				Intent sim= new Intent(SplashScreen.this,LifeProjectActivity.class);
+				SplashScreen.this.startActivity(sim);
+				SplashScreen.this.finish();
+			}
+			}, 2500);
+}
 }

@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.calculadoragasolina;
+package com.app.calculadoragasolina;
 
 public final class R {
     public static final class attr {
@@ -17,37 +17,40 @@ public final class R {
     }
     public static final class id {
         public static final int boton_calcular=0x7f070002;
-        public static final int coche_cilindrada_edit=0x7f070008;
-        public static final int coche_cilindrada_txt=0x7f070007;
-        public static final int coche_consumo_edit=0x7f070006;
-        public static final int coche_consumo_txt=0x7f070005;
-        public static final int coche_peso_edit=0x7f07000a;
-        public static final int coche_peso_txt=0x7f070009;
-        public static final int coche_update=0x7f07000b;
-        public static final int help=0x7f07001e;
-        public static final int hombres_edit=0x7f070018;
-        public static final int hombres_txt=0x7f070017;
+        public static final int coche_cilindrada_edit=0x7f070009;
+        public static final int coche_cilindrada_txt=0x7f070008;
+        public static final int coche_consumo_edit=0x7f070007;
+        public static final int coche_consumo_txt=0x7f070006;
+        public static final int coche_peso_edit=0x7f07000b;
+        public static final int coche_peso_txt=0x7f07000a;
+        public static final int coche_update=0x7f07000c;
+        public static final int help=0x7f070021;
+        public static final int hombres_edit=0x7f07001b;
+        public static final int hombres_txt=0x7f07001a;
         public static final int insidetab1=0x7f070001;
-        public static final int insidetab2=0x7f070004;
-        public static final int insidetab3=0x7f07000d;
-        public static final int insidetab4=0x7f070014;
-        public static final int insidetab5=0x7f07001d;
-        public static final int kilometros_edit=0x7f07000f;
-        public static final int kilometros_txt=0x7f07000e;
-        public static final int menu_settings=0x7f07001f;
-        public static final int mujeres_edit=0x7f070016;
-        public static final int mujeres_txt=0x7f070015;
-        public static final int ninos_edit=0x7f07001a;
-        public static final int ninos_txt=0x7f070019;
-        public static final int peajes_edit=0x7f070011;
-        public static final int peajes_txt=0x7f070010;
-        public static final int specie1_update=0x7f070012;
-        public static final int specie2_update=0x7f07001b;
+        public static final int insidetab2=0x7f070005;
+        public static final int insidetab3=0x7f07000e;
+        public static final int insidetab4=0x7f070017;
+        public static final int insidetab5=0x7f070020;
+        public static final int kilometros_edit=0x7f070010;
+        public static final int kilometros_txt=0x7f07000f;
+        public static final int menu_settings=0x7f070022;
+        public static final int mujeres_edit=0x7f070019;
+        public static final int mujeres_txt=0x7f070018;
+        public static final int ninos_edit=0x7f07001d;
+        public static final int ninos_txt=0x7f07001c;
+        public static final int peajes_edit=0x7f070012;
+        public static final int peajes_txt=0x7f070011;
+        public static final int personas_update=0x7f07001e;
+        public static final int preciogasolina_edit=0x7f070014;
+        public static final int preciogasolina_txt=0x7f070013;
+        public static final int resultado=0x7f070003;
+        public static final int ruta_update=0x7f070015;
         public static final int tab1=0x7f070000;
-        public static final int tab2=0x7f070003;
-        public static final int tab3=0x7f07000c;
-        public static final int tab4=0x7f070013;
-        public static final int tab5=0x7f07001c;
+        public static final int tab2=0x7f070004;
+        public static final int tab3=0x7f07000d;
+        public static final int tab4=0x7f070016;
+        public static final int tab5=0x7f07001f;
     }
     public static final class layout {
         public static final int activity_calculadora=0x7f030000;
@@ -66,7 +69,7 @@ public final class R {
         public static final int coche_peso_hint=0x7f04000a;
         public static final int coche_peso_txt=0x7f040009;
         public static final int hello_world=0x7f040001;
-        public static final int help=0x7f040015;
+        public static final int help=0x7f040017;
         public static final int hombres_hint=0x7f040012;
         public static final int hombres_txt=0x7f040011;
         public static final int kilometros_hint=0x7f04000c;
@@ -78,6 +81,9 @@ public final class R {
         public static final int ninos_txt=0x7f040013;
         public static final int peajes_hint=0x7f04000e;
         public static final int peajes_txt=0x7f04000d;
+        public static final int preciogasolina_hint=0x7f040016;
+        public static final int preciogasolina_txt=0x7f040015;
+        public static final int resultado=0x7f040018;
         public static final int update=0x7f040004;
     }
     public static final class style {

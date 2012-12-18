@@ -22,7 +22,10 @@
     <string name="hombres_hint">Numero de mujeres</string>
     <string name="ninos_txt">Niños en el coche</string>
     <string name="ninos_hint">Numero de niños</string>
+    <string name="preciogasolina_txt">Precio de la gasolina</string>
+    <string name="preciogasolina_hint">Precio en euros</string>
     <string name="help">Ayuda</string>
+    <string name="resultado"></string>
     
 
 </resources>

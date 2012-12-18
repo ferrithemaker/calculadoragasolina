@@ -48,6 +48,12 @@
 					android:layout_height="wrap_content"
 					android:text="@string/calcular" 
 					/>
+				<TextView
+					android:id="@+id/resultado"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:text="@string/resultado" />
         	</LinearLayout>
         	</ScrollView>
         	</LinearLayout>
@@ -166,8 +172,21 @@
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
 					/>
+				<TextView
+					android:id="@+id/preciogasolina_txt"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:text="@string/preciogasolina_txt" />
+				<EditText
+					android:id="@+id/preciogasolina_edit"
+					android:hint="@string/preciogasolina_hint"
+					android:layout_width="fill_parent"
+					android:inputType="numberDecimal"
+					android:layout_height="wrap_content"
+					/>
 				<Button
-					android:id="@+id/specie1_update"
+					android:id="@+id/ruta_update"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="@string/update" 
@@ -235,7 +254,7 @@
 					android:layout_height="wrap_content"
 					/>
 				<Button
-					android:id="@+id/specie2_update"
+					android:id="@+id/personas_update"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="@string/update" 

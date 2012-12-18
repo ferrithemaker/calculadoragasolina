@@ -18,8 +18,6 @@
 package com.app.calculadoragasolina;
 
 
-import com.example.calculadoragasolina.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

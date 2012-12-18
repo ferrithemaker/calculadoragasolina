@@ -24,14 +24,18 @@ public class Engine {
 	public static int KM=0;
 	public static int CC=0;
 	public static int PESO=0;
-	public static int PEAJES=0;
-	public static int CONSUMO=0;
-	public static int PRECIO_GASOLINA=0;
-	public static int calculo() {
+	public static float PEAJES=0;
+	public static float CONSUMO=0;
+	public static float PRECIO_GASOLINA=0;
+	public static float calculo() {
 		int peso_pasajeros=(NUM_MUJERES*55)*(NUM_HOMBRES*80)+(NUM_NINOS*30);
 		int num_pasajeros=NUM_MUJERES+NUM_HOMBRES+NUM_NINOS;
 		int peso_total=peso_pasajeros+PESO;
-		int coste=((KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_MUJERES+NUM_HOMBRES)+PEAJES/(NUM_MUJERES+NUM_HOMBRES);
+		float coste=0;
+		if (CONSUMO>0) { // calculamos en relación al consumo si el valor existe
+			coste=((KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_MUJERES+NUM_HOMBRES)+PEAJES/(NUM_MUJERES+NUM_HOMBRES);
+		}
+		
 		return coste;
 	}
 

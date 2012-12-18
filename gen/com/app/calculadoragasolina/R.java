@@ -34,7 +34,7 @@ public final class R {
         public static final int insidetab5=0x7f070020;
         public static final int kilometros_edit=0x7f070010;
         public static final int kilometros_txt=0x7f07000f;
-        public static final int menu_settings=0x7f070022;
+        public static final int menu_exit=0x7f070022;
         public static final int mujeres_edit=0x7f070019;
         public static final int mujeres_txt=0x7f070018;
         public static final int ninos_edit=0x7f07001d;

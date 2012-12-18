@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -72,7 +73,7 @@ public class Calculadora extends Activity {
         calcular = (Button) findViewById(R.id.boton_calcular);
         km_edit = (EditText)findViewById(R.id.kilometros_edit);
         peso_edit = (EditText)findViewById(R.id.coche_peso_edit);
-        cc_edit = (EditText)findViewById(R.id.coche_consumo_edit);
+        cc_edit = (EditText)findViewById(R.id.coche_cilindrada_edit);
         hombres_edit = (EditText)findViewById(R.id.hombres_edit);
         mujeres_edit = (EditText)findViewById(R.id.mujeres_edit);
         ninos_edit = (EditText)findViewById(R.id.ninos_edit);
@@ -85,9 +86,9 @@ public class Calculadora extends Activity {
         hombres_edit.setText(Integer.toString(Engine.NUM_HOMBRES));
         mujeres_edit.setText(Integer.toString(Engine.NUM_MUJERES));
         ninos_edit.setText(Integer.toString(Engine.NUM_NINOS));
-        consumo_edit.setText(Integer.toString(Engine.CONSUMO));
-        peajes_edit.setText(Integer.toString(Engine.PEAJES));
-        preciogasolina_edit.setText(Integer.toString(Engine.PRECIO_GASOLINA));
+        consumo_edit.setText(Float.toString(Engine.CONSUMO));
+        peajes_edit.setText(Float.toString(Engine.PEAJES));
+        preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
         resultado=(TextView) findViewById(R.id.resultado);
         
 	
@@ -104,9 +105,9 @@ public class Calculadora extends Activity {
       			peso_edit.setText(Integer.toString(Engine.PESO));
       		  }
       		  if (consumo_edit.getText().toString().trim().equals("")==false) {
-      			  Engine.CONSUMO=Integer.parseInt(consumo_edit.getText().toString());
+      			  Engine.CONSUMO=Float.parseFloat(consumo_edit.getText().toString());
       		  } else {
-      			consumo_edit.setText(Integer.toString(Engine.CONSUMO));
+      			consumo_edit.setText(Float.toString(Engine.CONSUMO));
       		  }
      	   }
         });
@@ -139,14 +140,14 @@ public class Calculadora extends Activity {
       			km_edit.setText(Integer.toString(Engine.KM));
       		 }
       		 if (peajes_edit.getText().toString().trim().equals("")==false) {
-      			 Engine.PEAJES=Integer.parseInt(peajes_edit.getText().toString());
+      			 Engine.PEAJES=Float.parseFloat(peajes_edit.getText().toString());
       		 } else {
-      			peajes_edit.setText(Integer.toString(Engine.PEAJES));
+      			peajes_edit.setText(Float.toString(Engine.PEAJES));
       		 }
       		if (preciogasolina_edit.getText().toString().trim().equals("")==false) {
-     			 Engine.PRECIO_GASOLINA=Integer.parseInt(preciogasolina_edit.getText().toString());
+     			 Engine.PRECIO_GASOLINA=Float.parseFloat(preciogasolina_edit.getText().toString());
      		 } else {
-     			preciogasolina_edit.setText(Integer.toString(Engine.PRECIO_GASOLINA));
+     			preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
      		 }
       		  
       	   }
@@ -154,7 +155,7 @@ public class Calculadora extends Activity {
         
         calcular.setOnClickListener(new Button.OnClickListener() {
       	   public void onClick(View v) {
-      		   int valor;
+      		   float valor;
       		   valor=Engine.calculo();
       		   resultado.setText("Cada pasajero debe pagar: "+valor+" euros.");
       	   }
@@ -167,6 +168,15 @@ public class Calculadora extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_calculadora, menu);
 		return true;
+	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.menu_exit:
+	        	finish();
+	            break;
+	    }
+	    return true;
 	}
 
 }

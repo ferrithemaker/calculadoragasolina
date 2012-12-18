@@ -15,25 +15,16 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package com.example.calculadoragasolina;
+package com.app.calculadoragasolina;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
-
-public class Calculadora extends Activity {
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_calculadora);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_calculadora, menu);
-		return true;
-	}
+public class Engine {
+	public static int NUM_MUJERES=0;
+	public static int NUM_HOMBRES=0;
+	public static int NUM_NINOS=0;
+	public static int KM=0;
+	public static int CC=0;
+	public static int PESO=0;
+	public static int PEAJES=0;
+	public static int CONSUMO=0;
 
 }

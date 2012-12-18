@@ -6,6 +6,23 @@
     <string name="menu_settings">Settings</string>
     <string name="calcular">Calcular</string>
     <string name="update">Actualizar</string>
+    <string name="coche_consumo_txt">Consumo</string>
+    <string name="coche_consumo_hint">Consumo en l/100km</string>
+    <string name="coche_cilindrada_txt">Cilindrada</string>
+    <string name="coche_cilindrada_hint">Cilindrada en cc</string>
+    <string name="coche_peso_txt">Peso</string>
+    <string name="coche_peso_hint">Peso en kg</string>
+    <string name="kilometros_txt">Kilometros de su trayecto</string>
+    <string name="kilometros_hint">Km</string>
+    <string name="peajes_txt">Coste peajes de su trayecto</string>
+    <string name="peajes_hint">Coste en euros</string>
+    <string name="mujeres_txt">Mujeres en el coche</string>
+    <string name="mujeres_hint">Numero de mujeres</string>
+    <string name="hombres_txt">Hombres en el coche</string>
+    <string name="hombres_hint">Numero de mujeres</string>
+    <string name="ninos_txt">Niños en el coche</string>
+    <string name="ninos_hint">Numero de niños</string>
+    <string name="help">Ayuda</string>
     
 
 </resources>

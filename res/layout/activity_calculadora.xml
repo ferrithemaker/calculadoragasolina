@@ -76,10 +76,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
-					android:text="@string/grow_txt1" />
+					android:text="@string/coche_consumo_txt" />
 				<EditText
 					android:id="@+id/coche_consumo_edit"
-					android:hint="@string/grow_txt1_hint"
+					android:hint="@string/coche_consumo_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
@@ -89,10 +89,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
-					android:text="@string/grow_txt2" />
+					android:text="@string/coche_cilindrada_txt" />
 				<EditText
 					android:id="@+id/coche_cilindrada_edit"
-					android:hint="@string/grow_txt2_hint"
+					android:hint="@string/coche_cilindrada_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
@@ -102,10 +102,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
-					android:text="@string/rain_txt1" />
+					android:text="@string/coche_peso_txt" />
 				<EditText
 					android:id="@+id/coche_peso_edit"
-					android:hint="@string/rain_txt1_hint"
+					android:hint="@string/coche_peso_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
@@ -145,10 +145,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
-					android:text="@string/specie_txt1" />
+					android:text="@string/kilometros_txt" />
 				<EditText
 					android:id="@+id/kilometros_edit"
-					android:hint="@string/specie_txt1_hint"
+					android:hint="@string/kilometros_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
@@ -158,10 +158,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
-					android:text="@string/specie_txt2" />
+					android:text="@string/peajes_txt" />
 				<EditText
 					android:id="@+id/peajes_edit"
-					android:hint="@string/specie_txt2_hint"
+					android:hint="@string/peajes_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
@@ -200,10 +200,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
-					android:text="@string/specie_txt1" />
+					android:text="@string/mujeres_txt" />
 				<EditText
 					android:id="@+id/mujeres_edit"
-					android:hint="@string/specie_txt1_hint"
+					android:hint="@string/mujeres_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
@@ -213,10 +213,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
-					android:text="@string/specie_txt2" />
+					android:text="@string/hombres_txt" />
 				<EditText
 					android:id="@+id/hombres_edit"
-					android:hint="@string/specie_txt2_hint"
+					android:hint="@string/hombres_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
@@ -226,10 +226,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
-					android:text="@string/specie_txt3" />
+					android:text="@string/ninos_txt" />
 				<EditText
 					android:id="@+id/ninos_edit"
-					android:hint="@string/specie_txt3_hint"
+					android:hint="@string/ninos_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"

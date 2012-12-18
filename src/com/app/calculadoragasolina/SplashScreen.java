@@ -15,8 +15,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package com.example.calculadoragasolina;
+package com.app.calculadoragasolina;
 
+
+import com.example.calculadoragasolina.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -34,7 +36,7 @@ public class SplashScreen extends Activity {
 		new Handler().postDelayed(new Thread() {
 			@Override
 			public void run() {
-				Intent sim= new Intent(SplashScreen.this,LifeProjectActivity.class);
+				Intent sim= new Intent(SplashScreen.this,Calculadora.class);
 				SplashScreen.this.startActivity(sim);
 				SplashScreen.this.finish();
 			}

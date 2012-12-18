@@ -155,9 +155,9 @@ public class Calculadora extends Activity {
         
         calcular.setOnClickListener(new Button.OnClickListener() {
       	   public void onClick(View v) {
-      		   float valor;
-      		   valor=Engine.calculo();
-      		   resultado.setText("Cada pasajero debe pagar: "+valor+" euros.");
+      		   String result;
+      		   result=Engine.calculo();
+      		   resultado.setText(result);
       	   }
          });
 	}

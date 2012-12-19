@@ -25,8 +25,12 @@ import android.content.res.Resources;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -90,8 +94,19 @@ public class Calculadora extends Activity {
         peajes_edit.setText(Float.toString(Engine.PEAJES));
         preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
         resultado=(TextView) findViewById(R.id.resultado);
-        
-	
+        Spinner spinner_coche = (Spinner) findViewById(R.id.tipo_coche);
+        Spinner spinner_ruta = (Spinner) findViewById(R.id.tipo_ruta);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter_coche = ArrayAdapter.createFromResource(this,R.array.tipos_de_coche, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter_ruta = ArrayAdapter.createFromResource(this,R.array.tipos_de_ruta, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter_coche.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_ruta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner_coche.setAdapter(adapter_coche);
+        spinner_ruta.setAdapter(adapter_ruta);
+       
+
         coche_update.setOnClickListener(new Button.OnClickListener() {
      	   public void onClick(View v) {
      		  if (cc_edit.getText().toString().trim().equals("")==false) {
@@ -160,6 +175,32 @@ public class Calculadora extends Activity {
       		   resultado.setText(result);
       	   }
          });
+        
+        spinner_coche.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+        	public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                Engine.TIPO_COCHE= parentView.getSelectedItem().toString();
+                //your code here
+            }
+
+            public void onNothingSelected(AdapterView<?> parentView) {
+                //selectedyear = 0;
+                //return;
+            }
+        });
+        
+        spinner_ruta.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                Engine.TIPO_RUTA= parentView.getSelectedItem().toString();
+                //your code here
+            }
+
+            public void onNothingSelected(AdapterView<?> parentView) {
+                //selectedyear = 0;
+                //return;
+            }
+        });
 	}
 	
 

@@ -27,6 +27,8 @@ public class Engine {
 	public static float PEAJES=0;
 	public static float CONSUMO=0;
 	public static float PRECIO_GASOLINA=0;
+	public static String TIPO_COCHE;
+	public static String TIPO_RUTA;
 	public static String calculo() {
 		int peso_pasajeros=(NUM_MUJERES*55)*(NUM_HOMBRES*80)+(NUM_NINOS*30);
 		int num_pasajeros=NUM_MUJERES+NUM_HOMBRES+NUM_NINOS;
@@ -36,7 +38,7 @@ public class Engine {
 		if (CONSUMO>0) { // calculamos en relación al consumo si el valor existe
 			coste=((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_MUJERES+NUM_HOMBRES)+PEAJES/(NUM_MUJERES+NUM_HOMBRES);
 		}
-		cadena_resultado="Se ha realizado un trayecto de "+KM+" km con un coste total en gasolina de "+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)+" euros.\n\nEl coste en peajes es de "+PEAJES+" euros.\n\nCada uno de los "+(NUM_MUJERES+NUM_HOMBRES)+" viajeros (excluidos niños) debe pagar "+coste+" euros.";
+		cadena_resultado="Se ha realizado un trayecto de "+KM+" km por "+TIPO_RUTA+" con un coste total en gasolina de "+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)+" euros.\n\nEl coste en peajes es de "+PEAJES+" euros.\n\nCada uno de los "+(NUM_MUJERES+NUM_HOMBRES)+" viajeros (excluidos niños) debe pagar "+coste+" euros.";
 		return cadena_resultado;
 	}
 

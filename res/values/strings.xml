@@ -12,11 +12,13 @@
     <string name="coche_cilindrada_hint">Cilindrada en cc</string>
     <string name="coche_peso_txt">Peso</string>
     <string name="coche_peso_hint">Peso en kg</string>
+    <string name="coche_tipo_txt">Tipo de coche</string>
     <string name="kilometros_txt">Kilometros de su trayecto</string>
     <string name="kilometros_hint">Km</string>
     <string name="peajes_txt">Coste peajes de su trayecto</string>
     <string name="peajes_hint">Coste en euros</string>
     <string name="mujeres_txt">Mujeres en el coche</string>
+    <string name="ruta_tipo_txt">Tipo de ruta mayoritaria</string>
     <string name="mujeres_hint">Numero de mujeres</string>
     <string name="hombres_txt">Hombres en el coche</string>
     <string name="hombres_hint">Numero de mujeres</string>
@@ -27,5 +29,17 @@
     <string name="help">Programa para el calculo del coste de gasolina entre los pasajeros del automovil.</string>
     <string name="resultado"></string>
     
-
+    <string-array name="tipos_de_coche">
+        <item>Utilitario</item>
+        <item>Unifamiliar</item>
+        <item>Deportivo</item>
+        <item>4x4</item>
+        <item>Lujo</item>
+    </string-array>
+    <string-array name="tipos_de_ruta">
+        <item>Urbana</item>
+        <item>Interurbana</item>
+        <item>Autopista</item>
+        <item>Montaña</item>
+    </string-array>
 </resources>

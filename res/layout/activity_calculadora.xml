@@ -28,7 +28,7 @@
 				android:id="@+id/tab1"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/background"
+				android:background="@drawable/sp1"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -117,6 +117,17 @@
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
 					/>
+				<TextView
+					android:id="@+id/coche_tipo_txt"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:text="@string/coche_tipo_txt" />
+				<Spinner
+   					android:id="@+id/tipo_coche"
+    				android:layout_width="fill_parent"
+   					 android:layout_height="wrap_content" 
+   				/>
 				<Button
 					android:id="@+id/coche_update"
 					android:layout_width="wrap_content"
@@ -186,6 +197,17 @@
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
 					/>
+				<TextView
+					android:id="@+id/ruta_tipo_txt"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:text="@string/ruta_tipo_txt" />
+				<Spinner
+   					android:id="@+id/tipo_ruta"
+    				android:layout_width="fill_parent"
+   					 android:layout_height="wrap_content" 
+   				/>
 				<Button
 					android:id="@+id/ruta_update"
 					android:layout_width="wrap_content"
@@ -201,7 +223,7 @@
 				android:id="@+id/tab4"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/background"
+				android:background="@drawable/bgpersonas"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -269,7 +291,7 @@
 				android:id="@+id/tab5"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/background"
+				android:background="@drawable/bgayuda"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 

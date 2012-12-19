@@ -195,6 +195,7 @@
 					android:hint="@string/preciogasolina_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
+					android:drawableLeft="@drawable/icono"
 					android:layout_height="wrap_content"
 					/>
 				<TextView
@@ -206,7 +207,7 @@
 				<Spinner
    					android:id="@+id/tipo_ruta"
     				android:layout_width="fill_parent"
-   					 android:layout_height="wrap_content" 
+   					android:layout_height="wrap_content" 
    				/>
 				<Button
 					android:id="@+id/ruta_update"

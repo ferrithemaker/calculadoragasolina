@@ -18,27 +18,35 @@
 package com.app.calculadoragasolina;
 
 public class Engine {
-	public static int NUM_MUJERES=0;
-	public static int NUM_HOMBRES=0;
-	public static int NUM_NINOS=0;
+	public static int NUM_PASAJEROS=0;
 	public static int KM=0;
-	public static int CC=0;
-	public static int PESO=0;
+	//public static int CC=0;
+	//public static int PESO=0;
 	public static float PEAJES=0;
-	public static float CONSUMO=0;
+	private static float CONSUMO=0;
 	public static float PRECIO_GASOLINA=0;
 	public static String TIPO_COCHE;
 	public static String TIPO_RUTA;
+	public static String TIPO_COMBUSTIBLE;
 	public static String calculo() {
-		int peso_pasajeros=(NUM_MUJERES*55)*(NUM_HOMBRES*80)+(NUM_NINOS*30);
-		int num_pasajeros=NUM_MUJERES+NUM_HOMBRES+NUM_NINOS;
-		int peso_total=peso_pasajeros+PESO;
+		//int peso_pasajeros=(NUM_MUJERES*55)*(NUM_HOMBRES*80)+(NUM_NINOS*30);
+		//int num_pasajeros=NUM_PASAJEROS;
+		//int peso_total=peso_pasajeros+PESO;
 		float coste=0;
 		String cadena_resultado;
-		if (CONSUMO>0) { // calculamos en relación al consumo si el valor existe
-			coste=((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_MUJERES+NUM_HOMBRES)+PEAJES/(NUM_MUJERES+NUM_HOMBRES);
+		// definimos el tipo de coche
+		if (TIPO_COCHE.equals("Utilitario")) {
+			CONSUMO=(float)5.5;
+		} else {
+			CONSUMO=(float)7;
 		}
-		cadena_resultado="Se ha realizado un trayecto de "+KM+" km por "+TIPO_RUTA+" con un coste total en gasolina de "+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)+" euros.\n\nEl coste en peajes es de "+PEAJES+" euros.\n\nCada uno de los "+(NUM_MUJERES+NUM_HOMBRES)+" viajeros (excluidos niños) debe pagar "+coste+" euros.";
+		// definimos el modificador en relacion al tipo de combustible
+		
+		// calculamos el consumo
+		if (CONSUMO>0 && NUM_PASAJEROS>0) { // calculamos en relación al consumo si el valor existe
+			coste=((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+PEAJES/(NUM_PASAJEROS);
+		}
+		cadena_resultado="Se ha realizado un trayecto de "+KM+" km por el tipo de ruta selccionada con un coste total en combustible de "+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)+" euros.\n\nEl coste en peajes es de "+PEAJES+" euros.\n\nCada uno de los "+(NUM_PASAJEROS)+" viajeros debe pagar en total "+coste+" euros.";
 		return cadena_resultado;
 	}
 

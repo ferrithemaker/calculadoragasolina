@@ -36,7 +36,7 @@ import android.widget.TextView;
 
 public class Calculadora extends Activity {
 	TabHost tabs;
-	EditText km_edit,peso_edit,hombres_edit,mujeres_edit,ninos_edit,cc_edit,consumo_edit,peajes_edit,preciogasolina_edit;
+	EditText km_edit,peso_edit,personas_edit,mujeres_edit,ninos_edit,cc_edit,consumo_edit,peajes_edit,preciogasolina_edit;
 	TextView resultado;
 	Button coche_update,personas_update,ruta_update,calcular;
 	@Override
@@ -61,7 +61,7 @@ public class Calculadora extends Activity {
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab4");
         spec.setContent(R.id.tab4);
-        spec.setIndicator("Personas",res.getDrawable(android.R.drawable.ic_menu_edit));
+        spec.setIndicator("Pasajeros",res.getDrawable(android.R.drawable.ic_menu_edit));
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab5");
         spec.setContent(R.id.tab5);
@@ -76,73 +76,49 @@ public class Calculadora extends Activity {
         ruta_update = (Button) findViewById(R.id.ruta_update);
         calcular = (Button) findViewById(R.id.boton_calcular);
         km_edit = (EditText)findViewById(R.id.kilometros_edit);
-        peso_edit = (EditText)findViewById(R.id.coche_peso_edit);
-        cc_edit = (EditText)findViewById(R.id.coche_cilindrada_edit);
-        hombres_edit = (EditText)findViewById(R.id.hombres_edit);
-        mujeres_edit = (EditText)findViewById(R.id.mujeres_edit);
-        ninos_edit = (EditText)findViewById(R.id.ninos_edit);
-        consumo_edit = (EditText)findViewById(R.id.coche_consumo_edit);
+        //peso_edit = (EditText)findViewById(R.id.coche_peso_edit);
+        //cc_edit = (EditText)findViewById(R.id.coche_cilindrada_edit);
+        personas_edit = (EditText)findViewById(R.id.personas_edit);
+        //consumo_edit = (EditText)findViewById(R.id.coche_consumo_edit);
         peajes_edit = (EditText)findViewById(R.id.peajes_edit);
         preciogasolina_edit = (EditText)findViewById(R.id.preciogasolina_edit);
         km_edit.setText(Integer.toString(Engine.KM));
-        peso_edit.setText(Integer.toString(Engine.PESO));
-        cc_edit.setText(Integer.toString(Engine.CC));
-        hombres_edit.setText(Integer.toString(Engine.NUM_HOMBRES));
-        mujeres_edit.setText(Integer.toString(Engine.NUM_MUJERES));
-        ninos_edit.setText(Integer.toString(Engine.NUM_NINOS));
-        consumo_edit.setText(Float.toString(Engine.CONSUMO));
+        //peso_edit.setText(Integer.toString(Engine.PESO));
+        //cc_edit.setText(Integer.toString(Engine.CC));
+        personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+        //consumo_edit.setText(Float.toString(Engine.CONSUMO));
         peajes_edit.setText(Float.toString(Engine.PEAJES));
         preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
         resultado=(TextView) findViewById(R.id.resultado);
         Spinner spinner_coche = (Spinner) findViewById(R.id.tipo_coche);
         Spinner spinner_ruta = (Spinner) findViewById(R.id.tipo_ruta);
+        Spinner spinner_combustible = (Spinner) findViewById(R.id.tipo_combustible);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter_coche = ArrayAdapter.createFromResource(this,R.array.tipos_de_coche, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapter_ruta = ArrayAdapter.createFromResource(this,R.array.tipos_de_ruta, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter_combustible = ArrayAdapter.createFromResource(this,R.array.tipos_de_combustible, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter_coche.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter_ruta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_combustible.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner_coche.setAdapter(adapter_coche);
         spinner_ruta.setAdapter(adapter_ruta);
+        spinner_combustible.setAdapter(adapter_combustible);
        
 
         coche_update.setOnClickListener(new Button.OnClickListener() {
      	   public void onClick(View v) {
-     		  if (cc_edit.getText().toString().trim().equals("")==false) {
-      			   Engine.CC=Integer.parseInt(cc_edit.getText().toString());
-      		  } else {
-      			cc_edit.setText(Integer.toString(Engine.CC));
-      		  }
-      		  if (peso_edit.getText().toString().trim().equals("")==false) {
-      			  Engine.PESO=Integer.parseInt(peso_edit.getText().toString());
-      		  } else {
-      			peso_edit.setText(Integer.toString(Engine.PESO));
-      		  }
-      		  if (consumo_edit.getText().toString().trim().equals("")==false) {
-      			  Engine.CONSUMO=Float.parseFloat(consumo_edit.getText().toString());
-      		  } else {
-      			consumo_edit.setText(Float.toString(Engine.CONSUMO));
-      		  }
+     		  
      	   }
         });
         
         personas_update.setOnClickListener(new Button.OnClickListener() {
       	   public void onClick(View v) {
-      		 if (hombres_edit.getText().toString().trim().equals("")==false) {
-    			   Engine.NUM_HOMBRES=Integer.parseInt(hombres_edit.getText().toString());
+      		 if (personas_edit.getText().toString().trim().equals("")==false) {
+    			   Engine.NUM_PASAJEROS=Integer.parseInt(personas_edit.getText().toString());
     		  } else {
-    			  hombres_edit.setText(Integer.toString(Engine.NUM_MUJERES));
-    		  }
-    		  if (mujeres_edit.getText().toString().trim().equals("")==false) {
-    			  Engine.NUM_MUJERES=Integer.parseInt(mujeres_edit.getText().toString());
-    		  } else {
-    			  mujeres_edit.setText(Integer.toString(Engine.PESO));
-    		  }
-    		  if (ninos_edit.getText().toString().trim().equals("")==false) {
-    			  Engine.NUM_NINOS=Integer.parseInt(ninos_edit.getText().toString());
-    		  } else {
-    			  ninos_edit.setText(Integer.toString(Engine.NUM_NINOS));
+    			  personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
     		  }
       	   }
          });
@@ -193,6 +169,19 @@ public class Calculadora extends Activity {
 
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 Engine.TIPO_RUTA= parentView.getSelectedItem().toString();
+                //your code here
+            }
+
+            public void onNothingSelected(AdapterView<?> parentView) {
+                //selectedyear = 0;
+                //return;
+            }
+        });
+        
+        spinner_combustible.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                Engine.TIPO_COMBUSTIBLE= parentView.getSelectedItem().toString();
                 //your code here
             }
 

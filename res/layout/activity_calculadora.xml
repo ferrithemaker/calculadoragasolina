@@ -28,7 +28,7 @@
 				android:id="@+id/tab1"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/sp1"
+				android:background="@drawable/background"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -46,6 +46,7 @@
 					android:id="@+id/boton_calcular"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:text="@string/calcular" 
 					/>
 				<TextView
@@ -78,48 +79,11 @@
 				android:layout_marginRight="10dip"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
-				<TextView
-					android:id="@+id/coche_consumo_txt"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:text="@string/coche_consumo_txt" />
-				<EditText
-					android:id="@+id/coche_consumo_edit"
-					android:hint="@string/coche_consumo_hint"
-					android:layout_width="fill_parent"
-					android:inputType="numberDecimal"
-					android:layout_height="wrap_content"
-					/>
-				<TextView
-					android:id="@+id/coche_cilindrada_txt"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:text="@string/coche_cilindrada_txt" />
-				<EditText
-					android:id="@+id/coche_cilindrada_edit"
-					android:hint="@string/coche_cilindrada_hint"
-					android:layout_width="fill_parent"
-					android:inputType="numberDecimal"
-					android:layout_height="wrap_content"
-					/>
-				<TextView
-					android:id="@+id/coche_peso_txt"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:text="@string/coche_peso_txt" />
-				<EditText
-					android:id="@+id/coche_peso_edit"
-					android:hint="@string/coche_peso_hint"
-					android:layout_width="fill_parent"
-					android:inputType="numberDecimal"
-					android:layout_height="wrap_content"
-					/>
+				
 				<TextView
 					android:id="@+id/coche_tipo_txt"
 					android:layout_width="fill_parent"
+					android:layout_marginTop="20dip"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:text="@string/coche_tipo_txt" />
@@ -128,9 +92,22 @@
     				android:layout_width="fill_parent"
    					 android:layout_height="wrap_content" 
    				/>
+				<TextView
+					android:id="@+id/coche_tipocombustible_txt"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
+					android:textColor="#000000"
+					android:text="@string/coche_tipocombustible_txt" />
+				<Spinner
+   					android:id="@+id/tipo_combustible"
+    				android:layout_width="fill_parent"
+   					 android:layout_height="wrap_content" 
+   				/>
 				<Button
 					android:id="@+id/coche_update"
 					android:layout_width="wrap_content"
+					android:layout_marginTop="20dip"
 					android:layout_height="wrap_content"
 					android:text="@string/update" 
 					/>
@@ -162,6 +139,7 @@
 					android:id="@+id/kilometros_txt"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:textColor="#000000"
 					android:text="@string/kilometros_txt" />
 				<EditText
@@ -175,6 +153,7 @@
 					android:id="@+id/peajes_txt"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:textColor="#000000"
 					android:text="@string/peajes_txt" />
 				<EditText
@@ -188,6 +167,7 @@
 					android:id="@+id/preciogasolina_txt"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:textColor="#000000"
 					android:text="@string/preciogasolina_txt" />
 				<EditText
@@ -195,13 +175,13 @@
 					android:hint="@string/preciogasolina_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
-					android:drawableLeft="@drawable/icono"
 					android:layout_height="wrap_content"
 					/>
 				<TextView
 					android:id="@+id/ruta_tipo_txt"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:textColor="#000000"
 					android:text="@string/ruta_tipo_txt" />
 				<Spinner
@@ -213,6 +193,7 @@
 					android:id="@+id/ruta_update"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:text="@string/update" 
 					/>
         	</LinearLayout>
@@ -224,7 +205,7 @@
 				android:id="@+id/tab4"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/bgpersonas"
+				android:background="@drawable/background"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -239,40 +220,15 @@
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
 				<TextView
-					android:id="@+id/mujeres_txt"
+					android:id="@+id/personas_txt"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:textColor="#000000"
-					android:text="@string/mujeres_txt" />
+					android:text="@string/personas_txt" />
 				<EditText
-					android:id="@+id/mujeres_edit"
-					android:hint="@string/mujeres_hint"
-					android:layout_width="fill_parent"
-					android:inputType="numberDecimal"
-					android:layout_height="wrap_content"
-					/>
-				<TextView
-					android:id="@+id/hombres_txt"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:text="@string/hombres_txt" />
-				<EditText
-					android:id="@+id/hombres_edit"
-					android:hint="@string/hombres_hint"
-					android:layout_width="fill_parent"
-					android:inputType="numberDecimal"
-					android:layout_height="wrap_content"
-					/>
-				<TextView
-					android:id="@+id/ninos_txt"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:text="@string/ninos_txt" />
-				<EditText
-					android:id="@+id/ninos_edit"
-					android:hint="@string/ninos_hint"
+					android:id="@+id/personas_edit"
+					android:hint="@string/personas_hint"
 					android:layout_width="fill_parent"
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
@@ -281,6 +237,7 @@
 					android:id="@+id/personas_update"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:text="@string/update" 
 					/>
         	</LinearLayout>
@@ -292,7 +249,7 @@
 				android:id="@+id/tab5"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/bgayuda"
+				android:background="@drawable/background"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -310,6 +267,7 @@
 					android:id="@+id/help"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
 					android:textColor="#000000"
 					android:text="@string/help" />
         	</LinearLayout>

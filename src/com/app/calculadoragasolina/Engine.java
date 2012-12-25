@@ -37,11 +37,52 @@ public class Engine {
 		// definimos el tipo de coche
 		if (TIPO_COCHE.equals("Utilitario")) {
 			CONSUMO=(float)5.5;
-		} else {
+		}
+		if (TIPO_COCHE.equals("Turismo")) {
+			CONSUMO=(float)6.5;
+		}
+		if (TIPO_COCHE.equals("Unifamiliar / Monovolumen")) {
+			CONSUMO=(float)11;
+		}
+		if (TIPO_COCHE.equals("Berlina")) {
 			CONSUMO=(float)7;
 		}
-		// definimos el modificador en relacion al tipo de combustible
+		if (TIPO_COCHE.equals("Sedan")) {
+			CONSUMO=(float)7.5;
+		}
+		if (TIPO_COCHE.equals("Deportivo")) {
+			CONSUMO=(float)12;
+		}
+		if (TIPO_COCHE.equals("Todoterreno")) {
+			CONSUMO=(float)12;
+		}
+		if (TIPO_COCHE.equals("Lujo")) {
+			CONSUMO=(float)14;
+		}
 		
+		// definimos el modificador en relacion al tipo de combustible
+		if (TIPO_COMBUSTIBLE.equals("Gasolina")) {
+			CONSUMO=CONSUMO*(float)1.1;
+		}
+		if (TIPO_COMBUSTIBLE.equals("Hibrido")) {
+			CONSUMO=CONSUMO*(float)0.8;
+		}
+		// definimos el modificador en relacion al tipo de carretera
+		if (TIPO_RUTA.equals("Urbana")) {
+			CONSUMO=CONSUMO*(float)1.1;
+		}
+		if (TIPO_RUTA.equals("Interurbana")) {
+			CONSUMO=CONSUMO*(float)0.9;
+		}
+		if (TIPO_RUTA.equals("Autopista")) {
+			CONSUMO=CONSUMO*(float)0.85;
+		}
+		if (TIPO_RUTA.equals("Montaña")) {
+			CONSUMO=CONSUMO*(float)1.5;
+		}
+		if (TIPO_RUTA.equals("Mixta")) {
+			CONSUMO=CONSUMO*(float)1;
+		}
 		// calculamos el consumo
 		if (CONSUMO>0 && NUM_PASAJEROS>0) { // calculamos en relación al consumo si el valor existe
 			coste=((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+PEAJES/(NUM_PASAJEROS);

@@ -23,14 +23,17 @@
     <string name="preciogasolina_txt">Precio de la gasolina</string>
     <string name="preciogasolina_hint">Precio en euros</string>
     <string name="coche_tipocombustible_txt">Tipo de combustible</string>
-    <string name="help">Programa para el calculo del coste de gasolina entre los pasajeros del automovil.</string>
+    <string name="help">Programa para el calculo del coste de gasolina entre los pasajeros de un automovil compartido.\n\nPara calcular el coste final se tendran el cuenta:\n\n<b>Caracteristicas del coche:</b>\n\n-Tipo de coche: tipo de coche usado para el viaje.\n\n-Tipo de combustible: Combustible que usa el coche.\n\n<b>Caracteristicas de la via:</b>\n\n-Kilometros: Kilometros recorridos.\n\n-Coste de los peajes: Coste en euros de los peajes que se han cruzado.\n\n-Precio del combustible: Precio del combustible en euros.\n\n-Tipo de ruta: Tipo de ruta mayoritaria utilizada en el viaje.\n\n<b>Pasajeros:</b>\n\n-Numero de pasajeros: El numero de pasajeros que viajan en el coche.\n\n<b>NOTA</b>: El valor del calculo sera una aproximación basada en los datos que se introduzcan en los diferentes campos. El autor no se hace responsable de la precisión del calculo. Es responsabilidad de los pasajeros valorar si el resultado del calculo es adecuado.</string>
     <string name="resultado"></string>
     
     <string-array name="tipos_de_coche">
         <item>Utilitario</item>
-        <item>Unifamiliar</item>
+        <item>Turismo</item>
+        <item>Unifamiliar / Monovolumen</item>
+        <item>Berlina</item>
+        <item>Sedan</item>
         <item>Deportivo</item>
-        <item>4x4</item>
+        <item>Todoterreno</item>
         <item>Lujo</item>
     </string-array>
     <string-array name="tipos_de_ruta">
@@ -38,9 +41,11 @@
         <item>Interurbana</item>
         <item>Autopista</item>
         <item>Montaña</item>
+        <item>Mixta</item>
     </string-array>
     <string-array name="tipos_de_combustible">
         <item>Gasolina</item>
         <item>Diesel</item>
+        <item>Hibrido</item>
     </string-array>
 </resources>

@@ -28,7 +28,7 @@
     
     <string-array name="tipos_de_coche">
         <item>Utilitario</item>
-        <item>Turismo</item>
+        <item>Compacto</item>
         <item>Unifamiliar / Monovolumen</item>
         <item>Berlina</item>
         <item>Sedan</item>

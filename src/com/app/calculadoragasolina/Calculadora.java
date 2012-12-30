@@ -32,13 +32,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TabHost;
+import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
 
 public class Calculadora extends Activity {
 	TabHost tabs;
 	EditText km_edit,peso_edit,personas_edit,mujeres_edit,ninos_edit,cc_edit,consumo_edit,peajes_edit,preciogasolina_edit;
-	TextView resultado;
-	Button coche_update,personas_update,ruta_update,calcular;
+	TextView resultado,total;
+	Button coche_update,personas_update,ruta_update;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,11 +54,11 @@ public class Calculadora extends Activity {
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab2");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("Coche",res.getDrawable(android.R.drawable.ic_menu_edit));
+        spec.setIndicator("Vehículo",res.getDrawable(android.R.drawable.ic_menu_edit));
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab3");
         spec.setContent(R.id.tab3);
-        spec.setIndicator("Ruta",res.getDrawable(android.R.drawable.ic_menu_edit));
+        spec.setIndicator("Vía",res.getDrawable(android.R.drawable.ic_menu_edit));
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab4");
         spec.setContent(R.id.tab4);
@@ -69,27 +70,21 @@ public class Calculadora extends Activity {
         tabs.addTab(spec);
         // setup width and height of tabs
         //tabs.getTabWidget().getChildAt(0).setLayoutParams(new LinearLayout.LayoutParams(100, 100));
-        tabs.setCurrentTab(5); // begin with help tab
+        tabs.setCurrentTab(4); // begin with help tab
         // begin setup UI layout
         coche_update = (Button) findViewById(R.id.coche_update);
         personas_update = (Button) findViewById(R.id.personas_update);
         ruta_update = (Button) findViewById(R.id.ruta_update);
-        calcular = (Button) findViewById(R.id.boton_calcular);
         km_edit = (EditText)findViewById(R.id.kilometros_edit);
-        //peso_edit = (EditText)findViewById(R.id.coche_peso_edit);
-        //cc_edit = (EditText)findViewById(R.id.coche_cilindrada_edit);
         personas_edit = (EditText)findViewById(R.id.personas_edit);
-        //consumo_edit = (EditText)findViewById(R.id.coche_consumo_edit);
         peajes_edit = (EditText)findViewById(R.id.peajes_edit);
         preciogasolina_edit = (EditText)findViewById(R.id.preciogasolina_edit);
         km_edit.setText(Integer.toString(Engine.KM));
-        //peso_edit.setText(Integer.toString(Engine.PESO));
-        //cc_edit.setText(Integer.toString(Engine.CC));
         personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
-        //consumo_edit.setText(Float.toString(Engine.CONSUMO));
         peajes_edit.setText(Float.toString(Engine.PEAJES));
         preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
         resultado=(TextView) findViewById(R.id.resultado);
+        total=(TextView) findViewById(R.id.total);
         Spinner spinner_coche = (Spinner) findViewById(R.id.tipo_coche);
         Spinner spinner_ruta = (Spinner) findViewById(R.id.tipo_ruta);
         Spinner spinner_combustible = (Spinner) findViewById(R.id.tipo_combustible);
@@ -144,13 +139,6 @@ public class Calculadora extends Activity {
       	   }
          });
         
-        calcular.setOnClickListener(new Button.OnClickListener() {
-      	   public void onClick(View v) {
-      		   String result;
-      		   result=Engine.calculo();
-      		   resultado.setText(result);
-      	   }
-         });
         
         spinner_coche.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -190,8 +178,27 @@ public class Calculadora extends Activity {
                 //return;
             }
         });
+        
+        tabs.setOnTabChangedListener(new OnTabChangeListener() {
+
+    		@Override
+    		public void onTabChanged(String tabId) {
+
+    		//int i = getTabHost().getCurrentTab();
+    		if (tabId.equals("mytab1")) {
+    			String result,valortotal;
+       		   	result=Engine.show_resultado();
+       		   	valortotal=Engine.show_total();
+       		   	resultado.setText(result);
+       		   	total.setText(valortotal);
+    		}
+
+    		 
+    		}
+    	});
 	}
-	
+
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

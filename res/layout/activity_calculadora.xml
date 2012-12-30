@@ -28,7 +28,7 @@
 				android:id="@+id/tab1"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/background"
+				android:background="@drawable/resultado"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -42,13 +42,15 @@
 				android:layout_marginRight="10dip"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
-				<Button
-					android:id="@+id/boton_calcular"
-					android:layout_width="wrap_content"
+				<TextView
+					android:id="@+id/total"
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="20dip"
-					android:text="@string/calcular" 
-					/>
+					android:textColor="#000000"
+					android:textSize="20sp"
+					android:textStyle="bold"
+					android:text="@string/total" />
 				<TextView
 					android:id="@+id/resultado"
 					android:layout_width="fill_parent"
@@ -65,7 +67,7 @@
 				android:id="@+id/tab2"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/background"
+				android:background="@drawable/vehiculo"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -119,7 +121,7 @@
 				android:id="@+id/tab3"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/background"
+				android:background="@drawable/via"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -201,7 +203,7 @@
 				android:id="@+id/tab4"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/background"
+				android:background="@drawable/pasajeros"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -245,7 +247,7 @@
 				android:id="@+id/tab5"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/background"
+				android:background="@drawable/ayuda"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 

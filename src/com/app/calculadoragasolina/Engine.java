@@ -26,63 +26,75 @@ public class Engine {
 	public static String TIPO_COCHE="Utilitario";
 	public static String TIPO_RUTA="Urbana";
 	public static String TIPO_COMBUSTIBLE="Gasolina";
-	public static String calculo() {
-		float coste=0;
-		String cadena_resultado;
+	public static float coste=0;
+	
+	public static void calculo() {
 		// definimos el tipo de coche
-		if (TIPO_COCHE.equals("Utilitario")) {
-			CONSUMO=(float)5.5;
-		}
-		if (TIPO_COCHE.equals("Compacto")) {
-			CONSUMO=(float)7.5;
-		}
-		if (TIPO_COCHE.equals("Unifamiliar / Monovolumen")) {
-			CONSUMO=(float)11;
-		}
-		if (TIPO_COCHE.equals("Berlina")) {
-			CONSUMO=(float)8.5;
-		}
-		if (TIPO_COCHE.equals("Sedan")) {
-			CONSUMO=(float)10;
-		}
-		if (TIPO_COCHE.equals("Deportivo")) {
-			CONSUMO=(float)13;
-		}
-		if (TIPO_COCHE.equals("Todoterreno")) {
-			CONSUMO=(float)13;
-		}
-		if (TIPO_COCHE.equals("Lujo")) {
-			CONSUMO=(float)15;
-		}
+				if (TIPO_COCHE.equals("Utilitario")) {
+					CONSUMO=(float)5.5;
+				}
+				if (TIPO_COCHE.equals("Compacto")) {
+					CONSUMO=(float)7.5;
+				}
+				if (TIPO_COCHE.equals("Unifamiliar / Monovolumen")) {
+					CONSUMO=(float)11;
+				}
+				if (TIPO_COCHE.equals("Berlina")) {
+					CONSUMO=(float)8.5;
+				}
+				if (TIPO_COCHE.equals("Sedan")) {
+					CONSUMO=(float)10;
+				}
+				if (TIPO_COCHE.equals("Deportivo")) {
+					CONSUMO=(float)13;
+				}
+				if (TIPO_COCHE.equals("Todoterreno")) {
+					CONSUMO=(float)13;
+				}
+				if (TIPO_COCHE.equals("Lujo")) {
+					CONSUMO=(float)15;
+				}
+				
+				// definimos el modificador en relacion al tipo de combustible
+				if (TIPO_COMBUSTIBLE.equals("Gasolina")) {
+					CONSUMO=CONSUMO*(float)1.1;
+				}
+				if (TIPO_COMBUSTIBLE.equals("Hibrido")) {
+					CONSUMO=CONSUMO*(float)0.8;
+				}
+				// definimos el modificador en relacion al tipo de carretera
+				if (TIPO_RUTA.equals("Urbana")) {
+					CONSUMO=CONSUMO*(float)1.2;
+				}
+				if (TIPO_RUTA.equals("Interurbana")) {
+					CONSUMO=CONSUMO*(float)0.9;
+				}
+				if (TIPO_RUTA.equals("Autopista")) {
+					CONSUMO=CONSUMO*(float)0.85;
+				}
+				if (TIPO_RUTA.equals("Montaña")) {
+					CONSUMO=CONSUMO*(float)1.5;
+				}
+				if (TIPO_RUTA.equals("Mixta")) {
+					CONSUMO=CONSUMO*(float)1;
+				}
+				// calculamos el consumo
+				if (CONSUMO>0 && NUM_PASAJEROS>0) { // calculamos en relación al consumo si el valor existe
+					coste=(float)Math.round(100*(((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+PEAJES/(NUM_PASAJEROS)))/100;
+				}
 		
-		// definimos el modificador en relacion al tipo de combustible
-		if (TIPO_COMBUSTIBLE.equals("Gasolina")) {
-			CONSUMO=CONSUMO*(float)1.1;
-		}
-		if (TIPO_COMBUSTIBLE.equals("Hibrido")) {
-			CONSUMO=CONSUMO*(float)0.8;
-		}
-		// definimos el modificador en relacion al tipo de carretera
-		if (TIPO_RUTA.equals("Urbana")) {
-			CONSUMO=CONSUMO*(float)1.2;
-		}
-		if (TIPO_RUTA.equals("Interurbana")) {
-			CONSUMO=CONSUMO*(float)0.9;
-		}
-		if (TIPO_RUTA.equals("Autopista")) {
-			CONSUMO=CONSUMO*(float)0.85;
-		}
-		if (TIPO_RUTA.equals("Montaña")) {
-			CONSUMO=CONSUMO*(float)1.5;
-		}
-		if (TIPO_RUTA.equals("Mixta")) {
-			CONSUMO=CONSUMO*(float)1;
-		}
-		// calculamos el consumo
-		if (CONSUMO>0 && NUM_PASAJEROS>0) { // calculamos en relación al consumo si el valor existe
-			coste=(float)Math.round(100*(((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+PEAJES/(NUM_PASAJEROS)))/100;
-		}
-		cadena_resultado="Se ha realizado un trayecto de "+KM+" km por el tipo de ruta selccionada con un coste total en combustible de "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+" euros.\n\nEl coste en peajes es de "+PEAJES+" euros.\n\nEl coste total del viaje es de "+(float)Math.round(100*(PEAJES+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" y cada uno de los "+(NUM_PASAJEROS)+" viajeros debe pagar en total "+(coste)+" euros.\n\nNOTA: Recuerde que estos valores son aproximados y solo se proporcionan a modo de orientación.";
+	}
+	public static String show_total() {
+		String cadena_resultado;
+		calculo();
+		cadena_resultado="TOTAL POR PASAJERO: "+(coste)+" €";
+		return cadena_resultado;
+	}
+	public static String show_resultado() {
+	
+		String cadena_resultado;
+		calculo();
+		cadena_resultado="Se ha realizado un trayecto de "+KM+" km por el tipo de vía selccionada con un coste total en combustible de "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+" €.\n\nEl coste en peajes es de "+PEAJES+" €.\n\nEl coste total del viaje es de "+(float)Math.round(100*(PEAJES+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" € y cada uno de los "+(NUM_PASAJEROS)+" viajeros debe pagar en total "+(coste)+" €.\n\nNOTA: Recuerde que estos valores son aproximados y solo se proporcionan a modo de orientación.";
 		return cadena_resultado;
 	}
 

@@ -19,6 +19,8 @@ package com.app.calculadoragasolina;
 
 
 
+import java.util.Locale;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.res.Resources;
@@ -45,28 +47,50 @@ public class Calculadora extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calculadora);
 		Resources res = getResources();
+		// configuracion del idioma
+		Engine.idioma=Locale.getDefault().getLanguage();
 		// tab setup
         tabs=(TabHost)findViewById(android.R.id.tabhost);
         tabs.setup(); 
         TabHost.TabSpec spec=tabs.newTabSpec("mytab1");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("   Resultados   ",res.getDrawable(android.R.drawable.ic_menu_gallery));
+        if (Engine.idioma.equals("es")) {
+        	spec.setIndicator("   Resultado   ",res.getDrawable(android.R.drawable.ic_menu_gallery));
+        } else {
+        	spec.setIndicator("   Results   ",res.getDrawable(android.R.drawable.ic_menu_gallery));
+        }
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab2");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("   Vehículo   ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        if (Engine.idioma.equals("es")) {
+        	spec.setIndicator("   Vehículo   ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        } else {
+        	spec.setIndicator("   Vehicle   ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        }
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab3");
         spec.setContent(R.id.tab3);
-        spec.setIndicator("Vía",res.getDrawable(android.R.drawable.ic_menu_edit));
+        if (Engine.idioma.equals("es")) {
+        	spec.setIndicator("   Trayecto   ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        } else {
+        	spec.setIndicator("   Route   ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        }
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab4");
         spec.setContent(R.id.tab4);
-        spec.setIndicator("   Pasajeros   ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        if (Engine.idioma.equals("es")) {
+        	spec.setIndicator("   Pasajeros   ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        } else {
+        	spec.setIndicator("   Passengers   ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        }
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab5");
         spec.setContent(R.id.tab5);
-        spec.setIndicator("Ayuda",res.getDrawable(android.R.drawable.ic_menu_help));
+        if (Engine.idioma.equals("es")) {
+        	spec.setIndicator("Ayuda",res.getDrawable(android.R.drawable.ic_menu_help));
+        } else {
+        	spec.setIndicator("Help",res.getDrawable(android.R.drawable.ic_menu_help));
+        }
         tabs.addTab(spec);
         // setup width and height of tabs
         //tabs.getTabWidget().getChildAt(0).setLayoutParams(new LinearLayout.LayoutParams(100, 100));

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Calculadora Combustible</string>
+    <string name="app_name">Calculadora de viaje</string>
     <string name="update">Actualizar</string>
     <string name="coche_tipo_txt">Tipo de coche</string>
     <string name="kilometros_txt">Kilometros de su trayecto</string>
-    <string name="kilometros_hint">Km</string>
+    <string name="kilometros_hint">km</string>
     <string name="peajes_txt">Coste peajes de su trayecto</string>
     <string name="peajes_hint">Coste en euros</string>
     <string name="ruta_tipo_txt">Tipo de vía mayoritaria</string>
@@ -22,8 +22,8 @@
         <item>Utilitario</item>
         <item>Compacto</item>
         <item>Unifamiliar / Monovolumen</item>
-        <item>Berlina</item>
-        <item>Sedan</item>
+        <item>Berlina / Sedan</item>
+        <item>Coupe</item>
         <item>Deportivo</item>
         <item>Todoterreno</item>
         <item>Lujo</item>

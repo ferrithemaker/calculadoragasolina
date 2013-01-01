@@ -46,7 +46,7 @@ public class Engine {
 					CONSUMO=(float)10;
 				}
 				if (TIPO_COCHE.equals("Deportivo")) {
-					CONSUMO=(float)13;
+					CONSUMO=(float)13.5;
 				}
 				if (TIPO_COCHE.equals("Todoterreno")) {
 					CONSUMO=(float)13;

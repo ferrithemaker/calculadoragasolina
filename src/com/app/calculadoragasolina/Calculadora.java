@@ -50,11 +50,11 @@ public class Calculadora extends Activity {
         tabs.setup(); 
         TabHost.TabSpec spec=tabs.newTabSpec("mytab1");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("  Resultados  ",res.getDrawable(android.R.drawable.ic_menu_gallery));
+        spec.setIndicator("   Resultados   ",res.getDrawable(android.R.drawable.ic_menu_gallery));
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab2");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("  Vehículo  ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        spec.setIndicator("   Vehículo   ",res.getDrawable(android.R.drawable.ic_menu_edit));
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab3");
         spec.setContent(R.id.tab3);
@@ -62,7 +62,7 @@ public class Calculadora extends Activity {
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab4");
         spec.setContent(R.id.tab4);
-        spec.setIndicator("  Pasajeros  ",res.getDrawable(android.R.drawable.ic_menu_edit));
+        spec.setIndicator("   Pasajeros   ",res.getDrawable(android.R.drawable.ic_menu_edit));
         tabs.addTab(spec);
         spec=tabs.newTabSpec("mytab5");
         spec.setContent(R.id.tab5);

@@ -66,22 +66,21 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f040000;
-        public static final int calcular=0x7f040001;
-        public static final int coche_tipo_txt=0x7f040003;
-        public static final int coche_tipocombustible_txt=0x7f04000d;
-        public static final int help=0x7f04000e;
-        public static final int kilometros_hint=0x7f040005;
-        public static final int kilometros_txt=0x7f040004;
-        public static final int peajes_hint=0x7f040007;
-        public static final int peajes_txt=0x7f040006;
-        public static final int personas_hint=0x7f04000a;
-        public static final int personas_txt=0x7f040009;
-        public static final int preciogasolina_hint=0x7f04000c;
-        public static final int preciogasolina_txt=0x7f04000b;
-        public static final int resultado=0x7f04000f;
-        public static final int ruta_tipo_txt=0x7f040008;
-        public static final int total=0x7f040010;
-        public static final int update=0x7f040002;
+        public static final int coche_tipo_txt=0x7f040002;
+        public static final int coche_tipocombustible_txt=0x7f04000c;
+        public static final int help=0x7f04000d;
+        public static final int kilometros_hint=0x7f040004;
+        public static final int kilometros_txt=0x7f040003;
+        public static final int peajes_hint=0x7f040006;
+        public static final int peajes_txt=0x7f040005;
+        public static final int personas_hint=0x7f040009;
+        public static final int personas_txt=0x7f040008;
+        public static final int preciogasolina_hint=0x7f04000b;
+        public static final int preciogasolina_txt=0x7f04000a;
+        public static final int resultado=0x7f04000e;
+        public static final int ruta_tipo_txt=0x7f040007;
+        public static final int total=0x7f04000f;
+        public static final int update=0x7f040001;
     }
     public static final class style {
         /** 

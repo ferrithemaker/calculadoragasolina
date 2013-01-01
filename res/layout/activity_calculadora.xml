@@ -67,7 +67,7 @@
 				android:id="@+id/tab2"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/vehiculo"
+				android:background="@drawable/envehiculo"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -121,7 +121,7 @@
 				android:id="@+id/tab3"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/via"
+				android:background="@drawable/envia"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 
@@ -203,7 +203,7 @@
 				android:id="@+id/tab4"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/pasajeros"
+				android:background="@drawable/enpasajeros"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
         	<ScrollView 

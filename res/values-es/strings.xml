@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Fuel calculator</string>
-    <string name="update">Update</string>
-    <string name="coche_tipo_txt">Car type</string>
-    <string name="kilometros_txt">Trip distance (Kilometers)</string>
+    <string name="app_name">Calculadora Combustible</string>
+    <string name="update">Actualizar</string>
+    <string name="coche_tipo_txt">Tipo de coche</string>
+    <string name="kilometros_txt">Kilometros de su trayecto</string>
     <string name="kilometros_hint">Km</string>
-    <string name="peajes_txt">Toll cost</string>
-    <string name="peajes_hint">Coste of all tolls on trip</string>
-    <string name="ruta_tipo_txt">Road type</string>
-    <string name="personas_txt">Number of travelers</string>
-    <string name="personas_hint">Number of travelers</string>
-    <string name="preciogasolina_txt">Fuel price (per liter)</string>
-    <string name="preciogasolina_hint">Fuel price (per liter)</string>
-    <string name="coche_tipocombustible_txt">Fuel type</string>
+    <string name="peajes_txt">Coste peajes de su trayecto</string>
+    <string name="peajes_hint">Coste en euros</string>
+    <string name="ruta_tipo_txt">Tipo de vía mayoritaria</string>
+    <string name="personas_txt">Número de pasajeros</string>
+    <string name="personas_hint">Número de pasajeros</string>
+    <string name="preciogasolina_txt">Precio de la gasolina (por litro)</string>
+    <string name="preciogasolina_hint">Precio en euros por litro</string>
+    <string name="coche_tipocombustible_txt">Tipo de combustible</string>
     <string name="help"><b><i>Aplicación para el cálculo del coste de combustible entre los pasajeros de un automóvil compartido.</i></b>\n\nPara calcular el coste final por pasajero se tendrán en cuenta:\n\n<b>Características del coche:</b>\n\n-Tipo de coche: Tipo de coche usado para el viaje.\n\n-Tipo de combustible: Combustible que usa el coche.\n\n<b>Características de la vía:</b>\n\n-Kilómetros: Kilómetros recorridos.\n\n-Coste de los peajes: Coste en euros de los peajes que se han cruzado.\n\n-Precio del combustible (por litro): Precio del combustible (por litro) en euros.\n\n-Tipo de ruta: Tipo de ruta mayoritaria utilizada en el viaje (o mixta en el caso que no se pueda determinar una vía mayoritaria).\n\n<b>Pasajeros:</b>\n\n-Número de pasajeros: El número de pasajeros que viajan en el coche.\n\n\nPara visualizar los resultados se debe ir a la pestaña <i>resultados</i>\n\n<b>NOTA</b>: El valor del cálculo será una aproximación basada en los datos que se introduzcan en los diferentes campos. El autor no se hace responsable de la precisión del cálculo. Es responsabilidad de los pasajeros valorar si el resultado del cálculo es adecuado.\n\n\n\n\n</string>
     <string name="resultado"></string>
     <string name="total"></string>
     
     <string-array name="tipos_de_coche">
-        <item>Small</item>
+        <item>Utilitario</item>
         <item>Compacto</item>
         <item>Unifamiliar / Monovolumen</item>
         <item>Berlina</item>
         <item>Sedan</item>
         <item>Deportivo</item>
-        <item>Off-Road</item>
-        <item>Luxury</item>
+        <item>Todoterreno</item>
+        <item>Lujo</item>
     </string-array>
     <string-array name="tipos_de_ruta">
         <item>Urbana</item>
         <item>Interurbana</item>
         <item>Autopista</item>
-        <item>Mountain</item>
-        <item>Mixed</item>
+        <item>Montaña</item>
+        <item>Mixta</item>
     </string-array>
     <string-array name="tipos_de_combustible">
-        <item>Gasoline</item>
+        <item>Gasolina</item>
         <item>Diesel</item>
-        <item>Hibrid</item>
+        <item>Hibrido</item>
     </string-array>
 </resources>

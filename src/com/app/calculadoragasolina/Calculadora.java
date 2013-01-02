@@ -128,7 +128,7 @@ public class Calculadora extends Activity {
 
         coche_update.setOnClickListener(new Button.OnClickListener() {
      	   public void onClick(View v) {
-     		  
+     		  tabs.setCurrentTab(2);
      	   }
         });
         
@@ -139,6 +139,7 @@ public class Calculadora extends Activity {
     		  } else {
     			  personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
     		  }
+      		tabs.setCurrentTab(1);
       	   }
          });
         
@@ -159,6 +160,7 @@ public class Calculadora extends Activity {
      		 } else {
      			preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
      		 }
+      		tabs.setCurrentTab(3);
       		  
       	   }
          });

@@ -112,6 +112,13 @@
 					android:layout_height="wrap_content"
 					android:text="@string/update" 
 					/>
+				<TextView
+					android:id="@+id/advice1"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
+					android:textColor="#000000"
+					android:text="@string/advice" />
         	</LinearLayout>
         	</ScrollView>
         	</LinearLayout>
@@ -194,6 +201,13 @@
 					android:layout_marginTop="20dip"
 					android:text="@string/update" 
 					/>
+				<TextView
+					android:id="@+id/advice2"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
+					android:textColor="#000000"
+					android:text="@string/advice" />
         	</LinearLayout>
         	</ScrollView>
         	</LinearLayout>
@@ -238,6 +252,13 @@
 					android:layout_marginTop="20dip"
 					android:text="@string/update" 
 					/>
+				<TextView
+					android:id="@+id/advice3"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
+					android:textColor="#000000"
+					android:text="@string/advice" />
         	</LinearLayout>
         	</ScrollView>
         	</LinearLayout>

@@ -24,6 +24,7 @@ public class Engine {
 	public static int KM=0;
 	public static float PEAJES=0;
 	private static float CONSUMO=0;
+	public static float EXTRAS=0;
 	public static float PRECIO_GASOLINA=0;
 	public static String TIPO_COCHE="Utilitario";
 	public static String TIPO_RUTA="Urbana";
@@ -135,7 +136,7 @@ public class Engine {
 		}
 		// calculamos el consumo
 		if (CONSUMO>0 && NUM_PASAJEROS>0) { // calculamos en relación al consumo si el valor existe
-			coste=(float)Math.round(100*(((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+PEAJES/(NUM_PASAJEROS)))/100;
+			coste=(float)Math.round(100*(((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+(PEAJES+EXTRAS)/(NUM_PASAJEROS)))/100;
 		}
 		
 	}
@@ -154,9 +155,9 @@ public class Engine {
 		String cadena_resultado;
 		calculo();
 		if (idioma.equals("es")) {
-			cadena_resultado="Se ha realizado un trayecto de "+KM+" km por el tipo de vía selccionada con un coste total en combustible de "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+".\n\nEl coste en peajes es de "+PEAJES+".\n\nEl coste total del viaje es de "+(float)Math.round(100*(PEAJES+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" y cada uno de los "+(NUM_PASAJEROS)+" viajeros debe pagar en total "+(coste)+".\n\nNOTA: Recuerde que estos valores son aproximados y solo se proporcionan a modo de orientación.";
+			cadena_resultado="Se ha realizado un trayecto de "+KM+" km por el tipo de vía selccionada con un coste total en combustible de "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+".\n\nEl coste en peajes y extras es de "+(PEAJES+EXTRAS)+".\n\nEl coste total del viaje es de "+(float)Math.round(100*(PEAJES+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" y cada uno de los "+(NUM_PASAJEROS)+" viajeros debe pagar en total "+(coste)+".\n\nNOTA: Recuerde que estos valores son aproximados y solo se proporcionan a modo de orientación.";
 		} else {
-			cadena_resultado="You have done a "+KM+" km trip with a fuel cost of "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+".\n\nTotal toll cost is "+PEAJES+".\n\nTotal cost of the trip is "+(float)Math.round(100*(PEAJES+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" and each one of the "+(NUM_PASAJEROS)+" passengers must pay total amount of "+(coste)+".\n\nDISCLAMER: Remember that the result values are approximated and you must use them as a reference.";
+			cadena_resultado="You have done a "+KM+" km trip with a fuel cost of "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+".\n\nTotal cost if tolls and extras is "+(PEAJES+EXTRAS)+".\n\nTotal cost of the trip is "+(float)Math.round(100*(PEAJES+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" and each one of the "+(NUM_PASAJEROS)+" passengers must pay total amount of "+(coste)+".\n\nDISCLAMER: Remember that the result values are approximated and you must use them as a reference.";
 
 		}
 		return cadena_resultado;

@@ -11,6 +11,8 @@
     <string name="ruta_tipo_txt">Tipo de vía mayoritaria</string>
     <string name="personas_txt">Número de pasajeros</string>
     <string name="personas_hint">Número de pasajeros</string>
+    <string name="extras_txt">Gastos extra</string>
+    <string name="extras_hint">Gastos extra como comida, hoteles, etc</string>
     <string name="preciogasolina_txt">Precio de la gasolina (por litro)</string>
     <string name="preciogasolina_hint">Precio en tu moneda por litro</string>
     <string name="coche_tipocombustible_txt">Tipo de combustible</string>

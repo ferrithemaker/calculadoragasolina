@@ -33,6 +33,20 @@
 					android:inputType="numberDecimal"
 					android:layout_height="wrap_content"
 					/>
+				<TextView
+					android:id="@+id/extras_txt"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
+					android:textColor="#000000"
+					android:text="@string/extras_txt" />
+				<EditText
+					android:id="@+id/extras_edit"
+					android:hint="@string/extras_hint"
+					android:layout_width="fill_parent"
+					android:inputType="numberDecimal"
+					android:layout_height="wrap_content"
+					/>
 				<Button
 					android:id="@+id/personas_update"
 					android:layout_width="wrap_content"

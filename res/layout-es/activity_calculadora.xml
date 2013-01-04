@@ -18,10 +18,17 @@
         	android:id="@android:id/tabs" />
       	</HorizontalScrollView>
       	<!-- Begining of tabs -->
-      	<android.support.v4.view.ViewPager android:id="@+id/tabcontent" 
+      	<FrameLayout
+        	android:id="@android:id/tabcontent"
+        	android:layout_width="match_parent"
+           	android:layout_height="match_parent"
+        >
+      	<android.support.v4.view.ViewPager 
+      	    	android:id="@+id/viewpager" 
 				android:layout_width="fill_parent"
 				android:layout_height="fill_parent"
 			/>
    		<!-- End of tabs -->
+   		</FrameLayout>
  	</LinearLayout>
 </TabHost>

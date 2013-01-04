@@ -45,6 +45,12 @@ public class Calculadora extends FragmentActivity {
 	TextView resultado,total;
 	Button coche_update,personas_update,ruta_update;
 	ViewPager pager;
+	Resultadofragment Rf;
+	Carfragment Cf;
+	Routefragment Routf;
+	Peoplefragment Pf;
+	Helpfragment Hf;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,17 +59,23 @@ public class Calculadora extends FragmentActivity {
 		// configuracion del idioma
 		Engine.idioma=Locale.getDefault().getLanguage();
 		// pager setup
-		pager = (ViewPager) findViewById(R.id.tabcontent);
+		pager = (ViewPager) findViewById(R.id.viewpager);
         MyFragmentsAdapter adapter = new MyFragmentsAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Resultadofragment());
-        adapter.addFragment(new Carfragment());
-        adapter.addFragment(new Carfragment());
-        adapter.addFragment(new Routefragment());
-        adapter.addFragment(new Peoplefragment());
-        adapter.addFragment(new Helpfragment());
+        Rf= new Resultadofragment();
+        Cf = new Carfragment();
+        Routf =  new Routefragment();
+        Pf =  new Peoplefragment();
+        Hf = new Helpfragment();
+        adapter.addFragment(Rf);
+        adapter.addFragment(Cf);
+        adapter.addFragment(Routf);
+        adapter.addFragment(Pf);
+        adapter.addFragment(Hf);
         pager.setAdapter(adapter);
-		// tab setup
-        /*tabs=(TabHost)findViewById(android.R.id.tabhost);
+        //Cf.update();
+		//tab setup
+        /*
+        tabs=(TabHost)findViewById(android.R.id.tabhost);
         tabs.setup(); 
         TabHost.TabSpec spec=tabs.newTabSpec("mytab1");
         spec.setContent(R.id.tab1);
@@ -105,24 +117,23 @@ public class Calculadora extends FragmentActivity {
         	spec.setIndicator("Help",res.getDrawable(android.R.drawable.ic_menu_help));
         }
         tabs.addTab(spec);
+        tabs.setCurrentTab(4); // begin with help tab
         */
-        // setup width and height of tabs
-        //tabs.getTabWidget().getChildAt(0).setLayoutParams(new LinearLayout.LayoutParams(100, 100));
-        //tabs.setCurrentTab(4); // begin with help tab
         // begin setup UI layout
-        /*coche_update = (Button) findViewById(R.id.coche_update);
+        //coche_update = (Button) findViewById(R.id.coche_update);
         personas_update = (Button) findViewById(R.id.personas_update);
         ruta_update = (Button) findViewById(R.id.ruta_update);
-        km_edit = (EditText)findViewById(R.id.kilometros_edit);
+        //km_edit = (EditText)findViewById(R.id.kilometros_edit);
         personas_edit = (EditText)findViewById(R.id.personas_edit);
         peajes_edit = (EditText)findViewById(R.id.peajes_edit);
         preciogasolina_edit = (EditText)findViewById(R.id.preciogasolina_edit);
-        km_edit.setText(Integer.toString(Engine.KM));
-        personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
-        peajes_edit.setText(Float.toString(Engine.PEAJES));
-        preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
-        resultado=(TextView) findViewById(R.id.resultado);
-        total=(TextView) findViewById(R.id.total);
+        //km_edit.setText(Integer.toString(Engine.KM));
+        //personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+        //peajes_edit.setText(Float.toString(Engine.PEAJES));
+        //preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
+        //resultado=(TextView) findViewById(R.id.resultado);
+        //total=(TextView) findViewById(R.id.total);
+        /*
         Spinner spinner_coche = (Spinner) findViewById(R.id.tipo_coche);
         Spinner spinner_ruta = (Spinner) findViewById(R.id.tipo_ruta);
         Spinner spinner_combustible = (Spinner) findViewById(R.id.tipo_combustible);
@@ -139,10 +150,10 @@ public class Calculadora extends FragmentActivity {
         spinner_ruta.setAdapter(adapter_ruta);
         spinner_combustible.setAdapter(adapter_combustible);
         */
-
-        /*coche_update.setOnClickListener(new Button.OnClickListener() {
+        /*
+        coche_update.setOnClickListener(new Button.OnClickListener() {
      	   public void onClick(View v) {
-     		  tabs.setCurrentTab(2);
+     		  //tabs.setCurrentTab(2);
      	   }
         });
         

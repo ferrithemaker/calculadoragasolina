@@ -59,11 +59,11 @@ public final class R {
         public static final int tab3=0x7f080016;
         public static final int tab4=0x7f08000c;
         public static final int tab5=0x7f080009;
-        public static final int tabcontent=0x7f080000;
         public static final int tipo_coche=0x7f080004;
         public static final int tipo_combustible=0x7f080006;
         public static final int tipo_ruta=0x7f08001f;
         public static final int total=0x7f080014;
+        public static final int viewpager=0x7f080000;
     }
     public static final class layout {
         public static final int activity_calculadora=0x7f030000;

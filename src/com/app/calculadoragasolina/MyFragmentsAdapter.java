@@ -6,6 +6,7 @@ import java.util.List;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.widget.Button;
 
 public class MyFragmentsAdapter extends FragmentPagerAdapter{
 
@@ -13,6 +14,7 @@ public class MyFragmentsAdapter extends FragmentPagerAdapter{
 	public MyFragmentsAdapter(FragmentManager fm) {
 		super(fm);
 		fragments = new ArrayList<Fragment>();
+		
 	}
 	public void addFragment(Fragment fragment){
 		fragments.add(fragment);

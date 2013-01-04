@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class Resultadofragment extends Fragment {
 	
@@ -19,6 +20,8 @@ public class Resultadofragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 		Bundle savedInstanceState) {
 			view = inflater.inflate(R.layout.resultado, null);
+			TextView resultado=(TextView) view.findViewById(R.id.resultado);
+			
 			return view; 
 	}
 	

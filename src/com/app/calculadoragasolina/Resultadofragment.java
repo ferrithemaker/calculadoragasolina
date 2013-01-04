@@ -21,7 +21,12 @@ public class Resultadofragment extends Fragment {
 		Bundle savedInstanceState) {
 			view = inflater.inflate(R.layout.resultado, null);
 			TextView resultado=(TextView) view.findViewById(R.id.resultado);
-			
+			TextView total=(TextView) view.findViewById(R.id.total);
+			String result,valortotal;
+   		   	result=Engine.show_resultado();
+   		   	valortotal=Engine.show_total();
+   		   	resultado.setText(result);
+   		   	total.setText(valortotal);			
 			return view; 
 	}
 	

@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +37,30 @@ public class Carfragment extends Fragment {
 	        // Apply the adapter to the spinner
 	        spinner_coche.setAdapter(adapter_coche);
 	        spinner_combustible.setAdapter(adapter_combustible);
+	        spinner_coche.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+	        	public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+	                Engine.TIPO_COCHE= parentView.getSelectedItem().toString();
+	                //your code here
+	            }
+
+	            public void onNothingSelected(AdapterView<?> parentView) {
+	                //selectedyear = 0;
+	                //return;
+	            }
+	        });
+	        spinner_combustible.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+	            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+	                Engine.TIPO_COMBUSTIBLE= parentView.getSelectedItem().toString();
+	                //your code here
+	            }
+
+	            public void onNothingSelected(AdapterView<?> parentView) {
+	                //selectedyear = 0;
+	                //return;
+	            }
+	        });
 			return view;
 			
 	}

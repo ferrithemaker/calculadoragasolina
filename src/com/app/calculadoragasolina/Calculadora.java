@@ -24,6 +24,8 @@ import java.util.Locale;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.res.Resources;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,11 +39,12 @@ import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
 
-public class Calculadora extends Activity {
+public class Calculadora extends FragmentActivity {
 	TabHost tabs;
 	EditText km_edit,peso_edit,personas_edit,mujeres_edit,ninos_edit,cc_edit,consumo_edit,peajes_edit,preciogasolina_edit;
 	TextView resultado,total;
 	Button coche_update,personas_update,ruta_update;
+	ViewPager pager;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -49,8 +52,18 @@ public class Calculadora extends Activity {
 		Resources res = getResources();
 		// configuracion del idioma
 		Engine.idioma=Locale.getDefault().getLanguage();
+		// pager setup
+		pager = (ViewPager) findViewById(R.id.tabcontent);
+        MyFragmentsAdapter adapter = new MyFragmentsAdapter(getSupportFragmentManager());
+        adapter.addFragment(new Resultadofragment());
+        adapter.addFragment(new Carfragment());
+        adapter.addFragment(new Carfragment());
+        adapter.addFragment(new Routefragment());
+        adapter.addFragment(new Peoplefragment());
+        adapter.addFragment(new Helpfragment());
+        pager.setAdapter(adapter);
 		// tab setup
-        tabs=(TabHost)findViewById(android.R.id.tabhost);
+        /*tabs=(TabHost)findViewById(android.R.id.tabhost);
         tabs.setup(); 
         TabHost.TabSpec spec=tabs.newTabSpec("mytab1");
         spec.setContent(R.id.tab1);
@@ -92,11 +105,12 @@ public class Calculadora extends Activity {
         	spec.setIndicator("Help",res.getDrawable(android.R.drawable.ic_menu_help));
         }
         tabs.addTab(spec);
+        */
         // setup width and height of tabs
         //tabs.getTabWidget().getChildAt(0).setLayoutParams(new LinearLayout.LayoutParams(100, 100));
-        tabs.setCurrentTab(4); // begin with help tab
+        //tabs.setCurrentTab(4); // begin with help tab
         // begin setup UI layout
-        coche_update = (Button) findViewById(R.id.coche_update);
+        /*coche_update = (Button) findViewById(R.id.coche_update);
         personas_update = (Button) findViewById(R.id.personas_update);
         ruta_update = (Button) findViewById(R.id.ruta_update);
         km_edit = (EditText)findViewById(R.id.kilometros_edit);
@@ -124,9 +138,9 @@ public class Calculadora extends Activity {
         spinner_coche.setAdapter(adapter_coche);
         spinner_ruta.setAdapter(adapter_ruta);
         spinner_combustible.setAdapter(adapter_combustible);
-       
+        */
 
-        coche_update.setOnClickListener(new Button.OnClickListener() {
+        /*coche_update.setOnClickListener(new Button.OnClickListener() {
      	   public void onClick(View v) {
      		  tabs.setCurrentTab(2);
      	   }
@@ -222,7 +236,9 @@ public class Calculadora extends Activity {
     		 
     		}
     	});
+	*/
 	}
+	
 
 
 

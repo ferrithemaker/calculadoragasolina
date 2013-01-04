@@ -42,6 +42,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.HorizontalScrollView;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
@@ -108,24 +109,50 @@ public class Calculadora extends FragmentActivity {
 		Resources res = getResources();
 		// configuracion del idioma
 		Engine.idioma=Locale.getDefault().getLanguage();
+		
+		final HorizontalScrollView mHorizontalScrollView;
+	    float scale = getResources().getDisplayMetrics().density;
+	    final double tabWidth = (int) (150 * scale + 0.5f);
+
+	    
+		
 		//tab setup
         
         tabs=(TabHost)findViewById(android.R.id.tabhost);
         tabs.setup();
         TabInfo tabInfo = null;
-        Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("Resultados"), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
-        this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("Vehiculo"), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
-        this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab3").setIndicator("Trayecto"), ( tabInfo = new TabInfo("Tab3", Routefragment.class, savedInstanceState)));
-        this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("Pasajeros"), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
-        this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Ayuda"), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
-        this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        //tabs.setOnTabChangedListener(this);
+        if (Engine.idioma.equals("es")) {
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("    Resultados    ",res.getDrawable(android.R.drawable.ic_menu_gallery)), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("    Vehículo    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab3").setIndicator("    Trayecto    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab3", Routefragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("    Pasajeros    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Ayuda",res.getDrawable(android.R.drawable.ic_menu_help)), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        } else {
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("    Results    ",res.getDrawable(android.R.drawable.ic_menu_gallery)), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("    Vehicle    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab3").setIndicator("    Route    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab3", Routefragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("    Passengers    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Help",res.getDrawable(android.R.drawable.ic_menu_help)), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
+        	this.mapTabInfo.put(tabInfo.tag, tabInfo);
+        }
+        
+        for (int i = 0; i < tabs.getTabWidget().getTabCount(); i++) {
+	        tabs.getTabWidget().getChildTabViewAt(i).getLayoutParams().width = (int) tabWidth;
+	    }
 
-        //TabHost.TabSpec spec=tabs.newTabSpec("mytab1");
+	    final double screenWidth = getWindowManager().getDefaultDisplay().getWidth();
+	    mHorizontalScrollView = (HorizontalScrollView) findViewById(R.id.hscroll);
+
+        
 		// pager setup
 		pager = (ViewPager) findViewById(R.id.viewpager);
         MyFragmentsAdapter adapter = new MyFragmentsAdapter(getSupportFragmentManager());
@@ -141,53 +168,7 @@ public class Calculadora extends FragmentActivity {
         adapter.addFragment(Hf);
         pager.setAdapter(adapter);
         
-        // action bar setup
-		//tab setup
-        
-        //tabs=(TabHost)findViewById(android.R.id.tabhost);
-        //tabs.setup(); 
-        //TabHost.TabSpec spec=tabs.newTabSpec("mytab1");
-        //spec.setContent(R.layout.resultado);
-        //if (Engine.idioma.equals("es")) {
-        //	spec.setIndicator("   Resultado   ",res.getDrawable(android.R.drawable.ic_menu_gallery));
-        //} else {
-        //	spec.setIndicator("   Results   ",res.getDrawable(android.R.drawable.ic_menu_gallery));
-        //}
-        //tabs.addTab(spec);
-        /*
-        spec=tabs.newTabSpec("mytab2");
-        spec.setContent(R.layout.car);
-        if (Engine.idioma.equals("es")) {
-        	spec.setIndicator("   Vehículo   ",res.getDrawable(android.R.drawable.ic_menu_edit));
-        } else {
-        	spec.setIndicator("   Vehicle   ",res.getDrawable(android.R.drawable.ic_menu_edit));
-        }
-        tabs.addTab(spec);
-        spec=tabs.newTabSpec("mytab3");
-        spec.setContent(R.layout.route);
-        if (Engine.idioma.equals("es")) {
-        	spec.setIndicator("   Trayecto   ",res.getDrawable(android.R.drawable.ic_menu_edit));
-        } else {
-        	spec.setIndicator("   Route   ",res.getDrawable(android.R.drawable.ic_menu_edit));
-        }
-        tabs.addTab(spec);
-        spec=tabs.newTabSpec("mytab4");
-        spec.setContent(R.layout.people);
-        if (Engine.idioma.equals("es")) {
-        	spec.setIndicator("   Pasajeros   ",res.getDrawable(android.R.drawable.ic_menu_edit));
-        } else {
-        	spec.setIndicator("   Passengers   ",res.getDrawable(android.R.drawable.ic_menu_edit));
-        }
-        tabs.addTab(spec);
-        spec=tabs.newTabSpec("mytab5");
-        spec.setContent(R.layout.help);
-        if (Engine.idioma.equals("es")) {
-        	spec.setIndicator("Ayuda",res.getDrawable(android.R.drawable.ic_menu_help));
-        } else {
-        	spec.setIndicator("Help",res.getDrawable(android.R.drawable.ic_menu_help));
-        }
-        tabs.addTab(spec);
-        */
+        //pager.setCurrentItem(4);
         //tabs.setCurrentTab(4); // begin with help tab
 
         // begin setup UI layout
@@ -221,6 +202,15 @@ public class Calculadora extends FragmentActivity {
     		}
     		int pos=tabs.getCurrentTab();
     		pager.setCurrentItem(pos);
+    		int nrOfShownCompleteTabs = ((int) (Math.floor(screenWidth
+                    / tabWidth) - 1) / 2) * 2;
+            int remainingSpace = (int) ((screenWidth - tabWidth - (tabWidth * nrOfShownCompleteTabs)) / 2);
+
+            int a = (int) (tabs.getCurrentTab() * tabWidth);
+            int b = (int) ((int) (nrOfShownCompleteTabs / 2) * tabWidth);
+            int offset = (a - b) - remainingSpace;
+
+            mHorizontalScrollView.scrollTo(offset, 0);
 
     		 
     		}

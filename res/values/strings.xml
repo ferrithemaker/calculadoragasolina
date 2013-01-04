@@ -11,8 +11,8 @@
     <string name="ruta_tipo_txt">Road type</string>
     <string name="personas_txt">Number of passengers</string>
     <string name="personas_hint">Number of passengers</string>
-    <string name="extras_txt">Extra costs</string>
-    <string name="extras_hint">Extra costs like food, motel room, etc</string>
+    <string name="extras_txt">Extra expenses</string>
+    <string name="extras_hint">Extra expenses like food, motel, etc</string>
     <string name="preciogasolina_txt">Fuel price (per liter)</string>
     <string name="preciogasolina_hint">Fuel price (per liter)</string>
     <string name="coche_tipocombustible_txt">Fuel type</string>

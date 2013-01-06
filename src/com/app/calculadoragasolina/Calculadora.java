@@ -57,6 +57,7 @@ public class Calculadora extends FragmentActivity {
 	Button coche_update,personas_update,ruta_update;
 	private HashMap<String, TabInfo> mapTabInfo = new HashMap<String, Calculadora.TabInfo>();
 	ViewPager pager;
+	MyFragmentsAdapter adapter;
 	Resultadofragment Rf;
 	Carfragment Cf;
 	Routefragment Routf;
@@ -144,7 +145,7 @@ public class Calculadora extends FragmentActivity {
         	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Help",res.getDrawable(android.R.drawable.ic_menu_help)), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         }
-        
+        // amb aixo ens preparem per centrar els tabs
         for (int i = 0; i < tabs.getTabWidget().getTabCount(); i++) {
 	        tabs.getTabWidget().getChildTabViewAt(i).getLayoutParams().width = (int) tabWidth;
 	    }
@@ -155,7 +156,7 @@ public class Calculadora extends FragmentActivity {
         
 		// pager setup
 		pager = (ViewPager) findViewById(R.id.viewpager);
-        MyFragmentsAdapter adapter = new MyFragmentsAdapter(getSupportFragmentManager());
+        adapter = new MyFragmentsAdapter(getSupportFragmentManager());
         Rf= new Resultadofragment();
         Cf = new Carfragment();
         Routf =  new Routefragment();
@@ -167,23 +168,32 @@ public class Calculadora extends FragmentActivity {
         adapter.addFragment(Pf);
         adapter.addFragment(Hf);
         pager.setAdapter(adapter);
+        //adapter.notifyDataSetChanged();
         
         //pager.setCurrentItem(4);
         //tabs.setCurrentTab(4); // begin with help tab
 
-        // begin setup UI layout
+        
         
         pager.setOnPageChangeListener(new OnPageChangeListener() {
         	@Override
             public void onPageSelected(int position)
             {
+        		//adapter.notifyDataSetChanged();
+        		Engine.calculo();
         		tabs.setCurrentTab(position);
             }
 
         	@Override
-            public void onPageScrolled(int arg0, float arg1, int arg2) {}
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+        		//adapter.notifyDataSetChanged();
+        		Engine.calculo();
+        	}
             @Override
-            public void onPageScrollStateChanged(int arg0) {}
+            public void onPageScrollStateChanged(int arg0) {
+            	//adapter.notifyDataSetChanged();
+            	Engine.calculo();
+            }
          });
    
          
@@ -193,13 +203,13 @@ public class Calculadora extends FragmentActivity {
     		public void onTabChanged(String tabId) {
 
     		//int i = getTabHost().getCurrentTab();
-    		if (tabId.equals("mytab1")) {
+    		/*if (tabId.equals("Tab1")) {
     			String result,valortotal;
        		   	result=Engine.show_resultado();
        		   	valortotal=Engine.show_total();
        		   	resultado.setText(result);
        		   	total.setText(valortotal);
-    		}
+    		} */
     		int pos=tabs.getCurrentTab();
     		pager.setCurrentItem(pos);
     		int nrOfShownCompleteTabs = ((int) (Math.floor(screenWidth
@@ -211,7 +221,8 @@ public class Calculadora extends FragmentActivity {
             int offset = (a - b) - remainingSpace;
 
             mHorizontalScrollView.scrollTo(offset, 0);
-
+            Engine.calculo();
+            //adapter.notifyDataSetChanged();
     		 
     		}
     	});

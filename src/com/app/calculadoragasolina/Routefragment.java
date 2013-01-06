@@ -1,5 +1,6 @@
 package com.app.calculadoragasolina;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,12 +11,15 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 public class Routefragment extends Fragment {
 	
 	View view = null;
 	EditText km_edit,peajes_edit,preciogasolina_edit;
+	LinearLayout pestanya;
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,8 @@ public class Routefragment extends Fragment {
 	        adapter_ruta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	        spinner_ruta.setAdapter(adapter_ruta);
 	        Button ruta_update = (Button) view.findViewById(R.id.ruta_update);
+	        
+	        
 	        ruta_update.setOnClickListener(new Button.OnClickListener() {
 	       	   public void onClick(View v) {
 	       		 if (km_edit.getText().toString().trim().equals("")==false) {
@@ -71,7 +77,4 @@ public class Routefragment extends Fragment {
 	        });
 			return view; 
 	}
-	
-	
-
 }

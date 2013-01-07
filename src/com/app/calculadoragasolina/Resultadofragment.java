@@ -27,10 +27,10 @@ public class Resultadofragment extends Fragment {
 			resultado=(TextView) view.findViewById(R.id.resultado);
 			total=(TextView) view.findViewById(R.id.total);
 			calculfinal=(Button) view.findViewById(R.id.calcular_resultado);
-   		   	result=Engine.show_resultado();
-   		   	valortotal=Engine.show_total();
-   		   	resultado.setText(result);
-   		   	total.setText(valortotal);
+   		   	//result=Engine.show_resultado();
+   		   	//valortotal=Engine.show_total();
+   		   	//resultado.setText(result);
+   		   	//total.setText(valortotal);
    		 calculfinal.setOnClickListener(new Button.OnClickListener() {
 	       	   public void onClick(View v) {
 	       		String result,valortotal;

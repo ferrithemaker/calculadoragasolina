@@ -180,19 +180,19 @@ public class Calculadora extends FragmentActivity {
             public void onPageSelected(int position)
             {
         		//adapter.notifyDataSetChanged();
-        		Engine.calculo();
+        		//Engine.calculo();
         		tabs.setCurrentTab(position);
             }
 
         	@Override
             public void onPageScrolled(int arg0, float arg1, int arg2) {
         		//adapter.notifyDataSetChanged();
-        		Engine.calculo();
+        		//Engine.calculo();
         	}
             @Override
             public void onPageScrollStateChanged(int arg0) {
             	//adapter.notifyDataSetChanged();
-            	Engine.calculo();
+            	//Engine.calculo();
             }
          });
    
@@ -212,16 +212,13 @@ public class Calculadora extends FragmentActivity {
     		} */
     		int pos=tabs.getCurrentTab();
     		pager.setCurrentItem(pos);
-    		int nrOfShownCompleteTabs = ((int) (Math.floor(screenWidth
-                    / tabWidth) - 1) / 2) * 2;
+    		int nrOfShownCompleteTabs = ((int) (Math.floor(screenWidth / tabWidth) - 1) / 2) * 2;
             int remainingSpace = (int) ((screenWidth - tabWidth - (tabWidth * nrOfShownCompleteTabs)) / 2);
-
             int a = (int) (tabs.getCurrentTab() * tabWidth);
             int b = (int) ((int) (nrOfShownCompleteTabs / 2) * tabWidth);
             int offset = (a - b) - remainingSpace;
-
             mHorizontalScrollView.scrollTo(offset, 0);
-            Engine.calculo();
+            //Engine.calculo();
             //adapter.notifyDataSetChanged();
     		 
     		}

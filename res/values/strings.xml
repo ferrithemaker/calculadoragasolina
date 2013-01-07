@@ -17,9 +17,9 @@
     <string name="preciogasolina_hint">Fuel price (per liter)</string>
     <string name="coche_tipocombustible_txt">Fuel type</string>
     <string name="help"><b><i>This application allows to calculate the trip cost among shared car passengers.</i></b>\n\nTo get the final cost per passenger we use next variables:\n\n<b>Vehicle specifications:</b>\n\n-Vehicle type: Type of vehicle used for the trip.\n\n-Type of fuel: Type of fuel of the vehicle.\n\n<b>Road specifications:</b>\n\n-Kilometers: Total distance of the trip.\n\n-Toll cost: Cost of all tolls.\n\n-Fuel cost: Fuel cost (per liter).\n\n-Route type: Route type mainly used on the trip (select mixed if you cannot determine).\n\n<b>Passengers:</b>\n\n-Number of passengers: Number of passengers that travels on the vehicle.\n\n-Extra expenses: Extra expenses like food, motel, etc\n\n\nYou can get the the final amount, selecting the <i>results</i> tab.\n\n<b>DISCLAIMER</b>: The final cost will be an approximation based on data introduced by the user.\n\n\n\n\n</string>
-    <string name="resultado"></string>
+    <string name="resultado">You have done a 0 km trip with a fuel cost of 0.\n\nTotal cost if tolls and extras is 0.\n\nTotal cost of the trip is 0 and each one of the 1 passengers must pay total amount of 0.\n\nDISCLAMER: Remember that the result values are approximated and you must use them as a reference."</string>
     <string name="calcularresultado">Calculate trip cost</string>
-    <string name="total"></string>
+    <string name="total">COST PER PASSENGER: 0</string>
     <string name="advice"></string>
     
     <string-array name="tipos_de_coche">

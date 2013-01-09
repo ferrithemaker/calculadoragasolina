@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.view.MotionEvent;
 
 public class Peoplefragment extends Fragment {
 	
@@ -43,6 +44,18 @@ public class Peoplefragment extends Fragment {
 		      		
 		      	   }
 		         });
+			personas_edit.setOnTouchListener(new View.OnTouchListener() {
+		        public boolean onTouch(View v, MotionEvent event) {
+		        	personas_edit.setText("");
+		            return false; // return is important...
+		        }
+		    });
+			extras_edit.setOnTouchListener(new View.OnTouchListener() {
+		        public boolean onTouch(View v, MotionEvent event) {
+		        	extras_edit.setText("");
+		            return false; // return is important...
+		        }
+		    });
 			return view; 
 			
 	}

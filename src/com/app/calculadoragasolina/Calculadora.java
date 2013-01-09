@@ -123,26 +123,26 @@ public class Calculadora extends FragmentActivity {
         tabs.setup();
         TabInfo tabInfo = null;
         if (Engine.idioma.equals("es")) {
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("    Resultados    ",res.getDrawable(android.R.drawable.ic_menu_gallery)), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("    Resultados    "), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("    Vehículo    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("    Vehículo    "), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab3").setIndicator("    Trayecto    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab3", Routefragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab3").setIndicator("    Trayecto    "), ( tabInfo = new TabInfo("Tab3", Routefragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("    Pasajeros    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("    Pasajeros    "), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Ayuda",res.getDrawable(android.R.drawable.ic_menu_help)), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Ayuda"), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         } else {
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("    Results    ",res.getDrawable(android.R.drawable.ic_menu_gallery)), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("    Results    "), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("    Vehicle    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("    Vehicle    "), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab3").setIndicator("    Route    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab3", Routefragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab3").setIndicator("    Route    "), ( tabInfo = new TabInfo("Tab3", Routefragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("    Passengers    ",res.getDrawable(android.R.drawable.ic_menu_edit)), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("    Passengers    "), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Help",res.getDrawable(android.R.drawable.ic_menu_help)), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Help"), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         }
         // amb aixo ens preparem per centrar els tabs

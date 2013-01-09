@@ -4,6 +4,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -75,6 +76,24 @@ public class Routefragment extends Fragment {
 	                //return;
 	            }
 	        });
+	        km_edit.setOnTouchListener(new View.OnTouchListener() {
+		        public boolean onTouch(View v, MotionEvent event) {
+		        	km_edit.setText("");
+		            return false; // return is important...
+		        }
+		    });
+	        peajes_edit.setOnTouchListener(new View.OnTouchListener() {
+		        public boolean onTouch(View v, MotionEvent event) {
+		        	peajes_edit.setText("");
+		            return false; // return is important...
+		        }
+		    });
+	        preciogasolina_edit.setOnTouchListener(new View.OnTouchListener() {
+		        public boolean onTouch(View v, MotionEvent event) {
+		        	preciogasolina_edit.setText("");
+		            return false; // return is important...
+		        }
+		    });
 			return view; 
 	}
 }

@@ -32,7 +32,7 @@ public final class R {
         public static final int advice1=0x7f080009;
         public static final int advice2=0x7f080025;
         public static final int advice3=0x7f080014;
-        public static final int calcular_resultado=0x7f080019;
+        public static final int calcular_resultado=0x7f080017;
         public static final int coche_tipo_txt=0x7f080004;
         public static final int coche_tipocombustible_txt=0x7f080006;
         public static final int coche_update=0x7f080008;
@@ -55,7 +55,7 @@ public final class R {
         public static final int personas_update=0x7f080013;
         public static final int preciogasolina_edit=0x7f080021;
         public static final int preciogasolina_txt=0x7f080020;
-        public static final int resultado=0x7f080018;
+        public static final int resultado=0x7f080019;
         public static final int ruta_tipo_txt=0x7f080022;
         public static final int ruta_update=0x7f080024;
         public static final int tab1=0x7f080015;
@@ -66,7 +66,7 @@ public final class R {
         public static final int tipo_coche=0x7f080005;
         public static final int tipo_combustible=0x7f080007;
         public static final int tipo_ruta=0x7f080023;
-        public static final int total=0x7f080017;
+        public static final int total=0x7f080018;
         public static final int viewpager=0x7f080001;
     }
     public static final class layout {

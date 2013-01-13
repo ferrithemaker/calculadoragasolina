@@ -2,6 +2,9 @@ package com.app.calculadoragasolina;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +53,25 @@ public class Peoplefragment extends Fragment {
 		            return false; // return is important...
 		        }
 		    });
+			/*personas_edit.addTextChangedListener(new TextWatcher() {
+                    public void  afterTextChanged (Editable s){ 
+                            //Log.d("seachScreen", "afterTextChanged");
+                    	if (personas_edit.getText().toString().trim().equals("")==false) {
+                        	Engine.NUM_PASAJEROS=Integer.parseInt(personas_edit.getText().toString());  
+     		    		} else {
+     		    			personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+     		    		}
+                    } 
+                    public void  beforeTextChanged  (CharSequence s, int start, int count, int after)
+                    { 
+                            //Log.d("seachScreen", "beforeTextChanged"); 
+                    } 
+                    public void  onTextChanged  (CharSequence s, int start, int before,  int count) 
+                    { 
+                            //Log.d("seachScreen", s.toString());
+                    
+                    }
+			}); */
 			extras_edit.setOnTouchListener(new View.OnTouchListener() {
 		        public boolean onTouch(View v, MotionEvent event) {
 		        	extras_edit.setText("");

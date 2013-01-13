@@ -19,6 +19,13 @@
 				android:layout_marginRight="10dip"
 				android:orientation="vertical"
 				xmlns:android="http://schemas.android.com/apk/res/android">
+				<Button
+					android:id="@+id/calcular_resultado"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dip"
+					android:text="@string/calcularresultado" 
+					/>
 				<TextView
 					android:id="@+id/total"
 					android:layout_width="fill_parent"
@@ -39,15 +46,7 @@
 					android:layout_marginRight="10dip"
 					android:textColor="#000000"
 					android:text="@string/resultado" />
-				<Button
-					android:id="@+id/calcular_resultado"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="20dip"
-					android:layout_marginLeft="10dip"
-					android:layout_marginRight="10dip"
-					android:text="@string/calcularresultado" 
-					/>
+				
         	</LinearLayout>
         	</ScrollView>
         	</LinearLayout>

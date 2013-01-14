@@ -30,7 +30,9 @@ public class Engine {
 	public static String TIPO_RUTA="Urbana";
 	public static String TIPO_COMBUSTIBLE="Gasolina";
 	public static float coste=0;
+	public static String unidades;
 	public static String idioma;
+	public static String units;
 	
 	public static void calculo() {
 		// definimos el tipo de coche
@@ -134,9 +136,16 @@ public class Engine {
 				CONSUMO=CONSUMO*(float)1;
 			}
 		}
+		if ((unidades.equals("Millas / Galones") && idioma.equals("es")) || (unidades.equals("Miles / Gallons") && !idioma.equals("es")) ) {
+			CONSUMO=(float)((float)CONSUMO*0.264172052*1.609344);
+		}
 		// calculamos el consumo
 		if (CONSUMO>0 && NUM_PASAJEROS>0) { // calculamos en relación al consumo si el valor existe
-			coste=(float)Math.round(100*(((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+(PEAJES+EXTRAS)/(NUM_PASAJEROS)))/100;
+			if ((unidades.equals("Kilometros / Litros") && idioma.equals("es")) || (unidades.equals("Kilometers / Liters") && !idioma.equals("es")) ) {
+				coste=(float)Math.round(100*(((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+(PEAJES+EXTRAS)/(NUM_PASAJEROS)))/100;
+			} else {
+				coste=(float)Math.round(100*(((float)((float)KM*1.609344/100)*CONSUMO*PRECIO_GASOLINA)/(NUM_PASAJEROS)+(PEAJES+EXTRAS)/(NUM_PASAJEROS)))/100;
+			}
 		}
 		
 	}
@@ -154,10 +163,13 @@ public class Engine {
 	
 		String cadena_resultado;
 		calculo();
+		
 		if (idioma.equals("es")) {
-			cadena_resultado="Se ha realizado un trayecto de "+KM+" km por el tipo de vía selccionada con un coste total en combustible de "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+".\n\nEl coste en peajes y extras es de "+(PEAJES+EXTRAS)+".\n\nEl coste total del viaje es de "+(float)Math.round(100*((PEAJES+EXTRAS)+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" y cada uno de los "+(NUM_PASAJEROS)+" viajeros debe pagar en total "+(coste)+".\n\nNOTA: Recuerde que estos valores son aproximados y se proporcionan a modo de referencia.";
+			if (unidades.equals("Kilometros / Litros")) { units="km"; } else { units="millas"; }			
+			cadena_resultado="Se ha realizado un trayecto de "+KM+" "+units+" por el tipo de vía selccionada con un coste total en combustible de "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+".\n\nEl coste en peajes y extras es de "+(PEAJES+EXTRAS)+".\n\nEl coste total del viaje es de "+(float)Math.round(100*((PEAJES+EXTRAS)+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" y cada uno de los "+(NUM_PASAJEROS)+" viajeros debe pagar en total "+(coste)+".\n\nNOTA: Recuerde que estos valores son aproximados y se proporcionan a modo de referencia.";
 		} else {
-			cadena_resultado="You have done a "+KM+" km trip with a fuel cost of "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+".\n\nTotal cost if tolls and extras is "+(PEAJES+EXTRAS)+".\n\nTotal cost of the trip is "+(float)Math.round(100*((PEAJES+EXTRAS)+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" and each one of the "+(NUM_PASAJEROS)+" passengers must pay total amount of "+(coste)+".\n\nDISCLAMER: Remember that the result values are approximated and you must use them as a reference.";
+			if (unidades.equals("Kilometers / Liters")) { units="km"; } else { units="miles"; }	
+			cadena_resultado="You have done a "+KM+" "+units+" trip with a fuel cost of "+(float)(Math.round(100*(float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA))/100+".\n\nTotal cost if tolls and extras is "+(PEAJES+EXTRAS)+".\n\nTotal cost of the trip is "+(float)Math.round(100*((PEAJES+EXTRAS)+((float)((float)KM/100)*CONSUMO*PRECIO_GASOLINA)))/100+" and each one of the "+(NUM_PASAJEROS)+" passengers must pay total amount of "+(coste)+".\n\nDISCLAMER: Remember that the result values are approximated and you must use them as a reference.";
 
 		}
 		return cadena_resultado;

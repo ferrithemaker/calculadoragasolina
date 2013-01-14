@@ -35,12 +35,16 @@ public class Routefragment extends Fragment {
 			peajes_edit = (EditText)view.findViewById(R.id.peajes_edit);
 			preciogasolina_edit = (EditText)view.findViewById(R.id.preciogasolina_edit);
 			Spinner spinner_ruta = (Spinner) view.findViewById(R.id.tipo_ruta);
+			Spinner spinner_unidades = (Spinner) view.findViewById(R.id.units);
 			km_edit.setText(Integer.toString(Engine.KM));
 			peajes_edit.setText(Float.toString(Engine.PEAJES));
 			preciogasolina_edit.setText(Float.toString(Engine.PRECIO_GASOLINA));
 	        ArrayAdapter<CharSequence> adapter_ruta = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),R.array.tipos_de_ruta, android.R.layout.simple_spinner_item);
+	        ArrayAdapter<CharSequence> adapter_unidades = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),R.array.unidades, android.R.layout.simple_spinner_item);
 	        adapter_ruta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	        adapter_unidades.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);  
 	        spinner_ruta.setAdapter(adapter_ruta);
+	        spinner_unidades.setAdapter(adapter_unidades);
 	        Button ruta_update = (Button) view.findViewById(R.id.ruta_update);
 	        
 	        
@@ -76,6 +80,19 @@ public class Routefragment extends Fragment {
 	                //return;
 	            }
 	        });
+	        spinner_unidades.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+	            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+	                Engine.unidades= parentView.getSelectedItem().toString();
+	                //your code here
+	            }
+
+	            public void onNothingSelected(AdapterView<?> parentView) {
+	                //selectedyear = 0;
+	                //return;
+	            }
+	        });
+	        
 	        km_edit.setOnTouchListener(new View.OnTouchListener() {
 		        public boolean onTouch(View v, MotionEvent event) {
 		        	km_edit.setText("");

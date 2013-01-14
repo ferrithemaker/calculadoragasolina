@@ -24,39 +24,29 @@
 					android:id="@+id/coche_tipo_txt"
 					android:layout_width="fill_parent"
 					android:layout_marginTop="20dip"
-					android:layout_marginLeft="10dip"
-					android:layout_marginRight="10dip"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:text="@string/coche_tipo_txt" />
 				<Spinner
    					android:id="@+id/tipo_coche"
     				android:layout_width="fill_parent"
-    				android:layout_marginLeft="10dip"
-					android:layout_marginRight="10dip"
    					android:layout_height="wrap_content" 
    				/>
 				<TextView
 					android:id="@+id/coche_tipocombustible_txt"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="10dip"
-					android:layout_marginRight="10dip"
 					android:textColor="#000000"
 					android:text="@string/coche_tipocombustible_txt" />
 				<Spinner
    					android:id="@+id/tipo_combustible"
     				android:layout_width="fill_parent"
-    				android:layout_marginLeft="10dip"
-					android:layout_marginRight="10dip"
    					android:layout_height="wrap_content" 
    				/>
 				<Button
 					android:id="@+id/coche_update"
 					android:layout_width="wrap_content"
 					android:layout_marginTop="20dip"
-					android:layout_marginLeft="10dip"
-					android:layout_marginRight="10dip"
 					android:layout_height="wrap_content"
 					android:text="@string/update" 
 					/>
@@ -64,8 +54,6 @@
 					android:id="@+id/advice1"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="10dip"
-					android:layout_marginRight="10dip"
 					android:layout_marginTop="20dip"
 					android:textColor="#000000"
 					android:text="@string/advice" />

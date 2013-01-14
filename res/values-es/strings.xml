@@ -4,8 +4,8 @@
     <string name="app_name">Calculadora de viaje</string>
     <string name="update">Guardar datos</string>
     <string name="coche_tipo_txt">Tipo de coche</string>
-    <string name="kilometros_txt">Kilómetros de su trayecto</string>
-    <string name="kilometros_hint">km</string>
+    <string name="kilometros_txt">Distancia recorrida</string>
+    <string name="kilometros_hint">Distancia</string>
     <string name="peajes_txt">Coste peajes de su trayecto</string>
     <string name="peajes_hint">Coste total de peajes</string>
     <string name="ruta_tipo_txt">Tipo de vía mayoritaria</string>
@@ -13,11 +13,12 @@
     <string name="personas_hint">Pasajeros</string>
     <string name="extras_txt">Gastos extra</string>
     <string name="extras_hint">Comida, hoteles, etc</string>
-    <string name="preciogasolina_txt">Precio de la gasolina (por litro)</string>
-    <string name="preciogasolina_hint">Precio por litro</string>
+    <string name="preciogasolina_txt">Precio de la gasolina</string>
+    <string name="preciogasolina_hint">Precio</string>
+    <string name="units_txt">Unidades</string>
     <string name="coche_tipocombustible_txt">Tipo de combustible</string>
-    <string name="help"><b><i>Aplicación para el cálculo del coste de combustible entre los pasajeros de un automóvil compartido.</i></b>\n\nPara calcular el coste final por pasajero se tendrán en cuenta:\n\n<b>Características del coche:</b>\n\n-Tipo de coche: Tipo de coche usado para el viaje.\n\n-Tipo de combustible: Combustible que usa el coche.\n\n<b>Características de la vía:</b>\n\n-Kilómetros: Kilómetros recorridos.\n\n-Coste de los peajes: Coste en tu moneda de los peajes que se han cruzado.\n\n-Precio del combustible (por litro): Precio del combustible (por litro) en tu moneda.\n\n-Tipo de ruta: Tipo de ruta mayoritaria utilizada en el viaje (o mixta en el caso que no se pueda determinar una vía mayoritaria).\n\n<b>Pasajeros:</b>\n\n-Número de pasajeros: El número de pasajeros que viajan en el coche.\n\nGastos extra: Gastos extra como comida, hoteles, etc\n\n\nPara visualizar los resultados se debe ir a la pestaña <i>resultados</i>\n\n<b>NOTA</b>: El valor del cálculo es una aproximación basada en los datos que se introduzcan en los diferentes campos.\n\n\n\n\n</string>
-    <string name="resultado">Se ha realizado un trayecto de 0 km por el tipo de vía selccionada con un coste total en combustible de 0.\n\nEl coste en peajes y extras es de 0.\n\nEl coste total del viaje es de 0 y cada uno de los 1 viajeros debe pagar en total 0.\n\nNOTA: Recuerde que estos valores son aproximados y se proporcionan a modo de referencia."</string>
+    <string name="help"><b><i>Aplicación para el cálculo del coste de combustible entre los pasajeros de un automóvil compartido.</i></b>\n\nPara calcular el coste final por pasajero se tendrán en cuenta:\n\n<b>Características del coche:</b>\n\n-Tipo de coche: Tipo de coche usado para el viaje.\n\n-Tipo de combustible: Combustible que usa el coche.\n\n<b>Características de la vía:</b>\n\n-Unidades: unidades de medida en tu país.\n\n-Kilómetros: Kilómetros recorridos.\n\n-Coste de los peajes: Coste en tu moneda de los peajes que se han cruzado.\n\n-Precio del combustible (por litro): Precio del combustible (por litro) en tu moneda.\n\n-Tipo de ruta: Tipo de ruta mayoritaria utilizada en el viaje (o mixta en el caso que no se pueda determinar una vía mayoritaria).\n\n<b>Pasajeros:</b>\n\n-Número de pasajeros: El número de pasajeros que viajan en el coche.\n\nGastos extra: Gastos extra como comida, hoteles, etc\n\n\nPara visualizar los resultados se debe ir a la pestaña <i>resultados</i>\n\n<b>NOTA</b>: El valor del cálculo es una aproximación basada en los datos que se introduzcan en los diferentes campos.\n\n\n\n\n</string>
+    <string name="resultado">Se ha realizado un trayecto de 0 km / millas por el tipo de vía selccionada con un coste total en combustible de 0.\n\nEl coste en peajes y extras es de 0.\n\nEl coste total del viaje es de 0 y cada uno de los 1 viajeros debe pagar en total 0.\n\nNOTA: Recuerde que estos valores son aproximados y se proporcionan a modo de referencia."</string>
     <string name="calcularresultado">Calcular gasto</string>
     <string name="total">TOTAL POR PASAJERO: 0</string>
     <string name="advice"></string>
@@ -43,5 +44,9 @@
         <item>Gasolina</item>
         <item>Diesel</item>
         <item>Hibrido</item>
+    </string-array>
+    <string-array name="unidades">
+        <item>Kilometros / Litros</item>
+        <item>Millas / Galones</item>
     </string-array>
 </resources>

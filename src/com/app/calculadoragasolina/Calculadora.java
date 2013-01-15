@@ -34,6 +34,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,17 +44,20 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabContentFactory;
+import android.widget.TabWidget;
 import android.widget.TextView;
 
 
 public class Calculadora extends FragmentActivity {
 	TabHost tabs;
 	EditText km_edit,peso_edit,personas_edit,mujeres_edit,ninos_edit,cc_edit,consumo_edit,peajes_edit,preciogasolina_edit;
-	TextView resultado,total;
+	TextView resultado,total,tv;
 	Button coche_update,personas_update,ruta_update;
 	private HashMap<String, TabInfo> mapTabInfo = new HashMap<String, Calculadora.TabInfo>();
 	ViewPager pager;
@@ -152,8 +156,24 @@ public class Calculadora extends FragmentActivity {
 
 	    final double screenWidth = getWindowManager().getDefaultDisplay().getWidth();
 	    mHorizontalScrollView = (HorizontalScrollView) findViewById(R.id.hscroll);
+	    //Do this to hack font size of title text
+	    /*TabWidget tw = (TabWidget)tabs.findViewById(android.R.id.tabs);
+	    View tabView1 = tw.getChildTabViewAt(0);
+	    View tabView2 = tw.getChildTabViewAt(1);
+	    View tabView3 = tw.getChildTabViewAt(2);
+	    View tabView4 = tw.getChildTabViewAt(3);
+	    View tabView5 = tw.getChildTabViewAt(4);
+	    tv = (TextView)tabView1.findViewById(android.R.id.title);
+	    tv.setTextAppearance(getApplicationContext(), R.style.settings_plain_text);
+	    tv = (TextView)tabView2.findViewById(android.R.id.title);
+	    tv.setGravity(Gravity.TOP);
+	    tv = (TextView)tabView3.findViewById(android.R.id.title);
+	    tv.setGravity(Gravity.CENTER);
+	    tv = (TextView)tabView4.findViewById(android.R.id.title);
+	    tv.setGravity(Gravity.CENTER);
+	    tv = (TextView)tabView5.findViewById(android.R.id.title);
+	    tv.setGravity(Gravity.CENTER); */
 
-        
 		// pager setup
 		pager = (ViewPager) findViewById(R.id.viewpager);
         adapter = new MyFragmentsAdapter(getSupportFragmentManager());

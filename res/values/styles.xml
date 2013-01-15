@@ -16,10 +16,5 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <style name="settings_plain_text">
-    	<item name="android:layout_marginTop"> 20dip </item>
-   		<item name="android:layout_marginBottom"> 20dip </item>
-    	<item name="android:textSize"> 18sp </item>
-	</style>
 
 </resources>

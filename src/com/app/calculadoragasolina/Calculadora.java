@@ -164,15 +164,15 @@ public class Calculadora extends FragmentActivity {
 	    View tabView4 = tw.getChildTabViewAt(3);
 	    View tabView5 = tw.getChildTabViewAt(4);
 	    tv = (TextView)tabView1.findViewById(android.R.id.title);
-	    tv.setTextAppearance(getApplicationContext(), R.style.settings_plain_text);
+	    tv.setTextSize(22);
 	    tv = (TextView)tabView2.findViewById(android.R.id.title);
-	    tv.setGravity(Gravity.TOP);
+	    tv.setTextSize(22);
 	    tv = (TextView)tabView3.findViewById(android.R.id.title);
-	    tv.setGravity(Gravity.CENTER);
+	    tv.setTextSize(22);
 	    tv = (TextView)tabView4.findViewById(android.R.id.title);
-	    tv.setGravity(Gravity.CENTER);
+	    tv.setTextSize(22);
 	    tv = (TextView)tabView5.findViewById(android.R.id.title);
-	    tv.setGravity(Gravity.CENTER); */
+	    tv.setTextSize(22); */
 
 		// pager setup
 		pager = (ViewPager) findViewById(R.id.viewpager);

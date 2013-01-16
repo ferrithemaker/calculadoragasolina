@@ -127,7 +127,7 @@ public class Calculadora extends FragmentActivity {
         tabs.setup();
         TabInfo tabInfo = null;
         if (Engine.idioma.equals("es")) {
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("    Resultados    "), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Ayuda"), ( tabInfo = new TabInfo("Tab1", Helpfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("    Vehículo    "), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
@@ -135,10 +135,10 @@ public class Calculadora extends FragmentActivity {
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("    Pasajeros    "), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Ayuda"), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("    Resultados    "), ( tabInfo = new TabInfo("Tab5", Resultadofragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         } else {
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("    Results    "), ( tabInfo = new TabInfo("Tab1", Resultadofragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab1").setIndicator("Help"), ( tabInfo = new TabInfo("Tab1", Helpfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab2").setIndicator("    Vehicle    "), ( tabInfo = new TabInfo("Tab2", Carfragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
@@ -146,7 +146,7 @@ public class Calculadora extends FragmentActivity {
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab4").setIndicator("    Passengers    "), ( tabInfo = new TabInfo("Tab4", Peoplefragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("Help"), ( tabInfo = new TabInfo("Tab5", Helpfragment.class, savedInstanceState)));
+        	Calculadora.AddTab(this, tabs, this.tabs.newTabSpec("Tab5").setIndicator("    Results    "), ( tabInfo = new TabInfo("Tab5", Resultadofragment.class, savedInstanceState)));
         	this.mapTabInfo.put(tabInfo.tag, tabInfo);
         }
         // amb aixo ens preparem per centrar els tabs
@@ -182,11 +182,12 @@ public class Calculadora extends FragmentActivity {
         Routf =  new Routefragment();
         Pf =  new Peoplefragment();
         Hf = new Helpfragment();
-        adapter.addFragment(Rf);
+        adapter.addFragment(Hf);
         adapter.addFragment(Cf);
         adapter.addFragment(Routf);
         adapter.addFragment(Pf);
-        adapter.addFragment(Hf);
+        adapter.addFragment(Rf);
+        
         pager.setAdapter(adapter);
         //adapter.notifyDataSetChanged();
         

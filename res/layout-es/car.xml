@@ -43,13 +43,6 @@
     				android:layout_width="fill_parent"
    					 android:layout_height="wrap_content" 
    				/>
-				<Button
-					android:id="@+id/coche_update"
-					android:layout_width="wrap_content"
-					android:layout_marginTop="20dip"
-					android:layout_height="wrap_content"
-					android:text="@string/update" 
-					/>
 				<TextView
 					android:id="@+id/advice1"
 					android:layout_width="fill_parent"

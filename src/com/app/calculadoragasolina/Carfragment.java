@@ -30,7 +30,7 @@ public class Carfragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 			view = inflater.inflate(R.layout.car, null);
 			Spinner spinner_coche = (Spinner) view.findViewById(R.id.tipo_coche);
-			coche_update= (Button) view.findViewById(R.id.coche_update);
+			//coche_update= (Button) view.findViewById(R.id.coche_update);
 	        Spinner spinner_combustible = (Spinner) view.findViewById(R.id.tipo_combustible);
 	        ArrayAdapter<CharSequence> adapter_coche = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),R.array.tipos_de_coche, android.R.layout.simple_spinner_item);
 	        ArrayAdapter<CharSequence> adapter_combustible = ArrayAdapter.createFromResource(getActivity().getApplicationContext(),R.array.tipos_de_combustible, android.R.layout.simple_spinner_item);
@@ -40,12 +40,12 @@ public class Carfragment extends Fragment {
 	        // Apply the adapter to the spinner
 	        spinner_coche.setAdapter(adapter_coche);
 	        spinner_combustible.setAdapter(adapter_combustible);
-	        coche_update.setOnClickListener(new Button.OnClickListener() {
+	        /*coche_update.setOnClickListener(new Button.OnClickListener() {
 		       	   public void onClick(View v) {
 		       		   // nada que hacer
 		       		  
 		       	   }
-		          });
+		          }); */
 	        spinner_coche.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 	        	public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {

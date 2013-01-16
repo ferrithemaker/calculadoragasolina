@@ -3,6 +3,8 @@ package com.app.calculadoragasolina;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -45,10 +47,10 @@ public class Routefragment extends Fragment {
 	        adapter_unidades.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);  
 	        spinner_ruta.setAdapter(adapter_ruta);
 	        spinner_unidades.setAdapter(adapter_unidades);
-	        Button ruta_update = (Button) view.findViewById(R.id.ruta_update);
+	        //Button ruta_update = (Button) view.findViewById(R.id.ruta_update);
 	        
 	        
-	        ruta_update.setOnClickListener(new Button.OnClickListener() {
+	        /*ruta_update.setOnClickListener(new Button.OnClickListener() {
 	       	   public void onClick(View v) {
 	       		 if (km_edit.getText().toString().trim().equals("")==false) {
 	       			 Engine.KM=Integer.parseInt(km_edit.getText().toString());
@@ -67,7 +69,7 @@ public class Routefragment extends Fragment {
 	      		 }
 	       		  
 	       	   }
-	          });
+	          }); */
 	        spinner_ruta.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 	            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -92,8 +94,71 @@ public class Routefragment extends Fragment {
 	                //return;
 	            }
 	        });
+	        km_edit.addTextChangedListener(new TextWatcher() {
+                public void  afterTextChanged (Editable s){ 
+                        //Log.d("seachScreen", "afterTextChanged");
+                	if (km_edit.getText().toString().trim().equals("")==false) {
+                    	Engine.KM=Integer.parseInt(km_edit.getText().toString());
+                    	//personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+ 		    		} else {
+ 		    			Engine.KM=0;
+ 		    			//personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+ 		    		}
+                } 
+                public void  beforeTextChanged  (CharSequence s, int start, int count, int after)
+                { 
+                        //Log.d("seachScreen", "beforeTextChanged"); 
+                } 
+                public void  onTextChanged  (CharSequence s, int start, int before,  int count) 
+                { 
+                        //Log.d("seachScreen", s.toString());
+                
+                }
+	        });
+	        peajes_edit.addTextChangedListener(new TextWatcher() {
+                public void  afterTextChanged (Editable s){ 
+                        //Log.d("seachScreen", "afterTextChanged");
+                	if (peajes_edit.getText().toString().trim().equals("")==false) {
+                    	Engine.PEAJES=Float.parseFloat(peajes_edit.getText().toString());
+                    	//personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+ 		    		} else {
+ 		    			Engine.PEAJES=(float)0;
+ 		    			//personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+ 		    		}
+                } 
+                public void  beforeTextChanged  (CharSequence s, int start, int count, int after)
+                { 
+                        //Log.d("seachScreen", "beforeTextChanged"); 
+                } 
+                public void  onTextChanged  (CharSequence s, int start, int before,  int count) 
+                { 
+                        //Log.d("seachScreen", s.toString());
+                
+                }
+	        });
+	        preciogasolina_edit.addTextChangedListener(new TextWatcher() {
+                public void  afterTextChanged (Editable s){ 
+                        //Log.d("seachScreen", "afterTextChanged");
+                	if (preciogasolina_edit.getText().toString().trim().equals("")==false) {
+                    	Engine.PRECIO_GASOLINA=Float.parseFloat(preciogasolina_edit.getText().toString());
+                    	//personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+ 		    		} else {
+ 		    			Engine.PRECIO_GASOLINA=(float)0;
+ 		    			//personas_edit.setText(Integer.toString(Engine.NUM_PASAJEROS));
+ 		    		}
+                } 
+                public void  beforeTextChanged  (CharSequence s, int start, int count, int after)
+                { 
+                        //Log.d("seachScreen", "beforeTextChanged"); 
+                } 
+                public void  onTextChanged  (CharSequence s, int start, int before,  int count) 
+                { 
+                        //Log.d("seachScreen", s.toString());
+                
+                }
+	        });
 	        
-	        km_edit.setOnTouchListener(new View.OnTouchListener() {
+	        /*km_edit.setOnTouchListener(new View.OnTouchListener() {
 		        public boolean onTouch(View v, MotionEvent event) {
 		        	km_edit.setText("");
 		            return false; // return is important...
@@ -110,7 +175,7 @@ public class Routefragment extends Fragment {
 		        	preciogasolina_edit.setText("");
 		            return false; // return is important...
 		        }
-		    });
+		    }); */
 			return view; 
 	}
 }
